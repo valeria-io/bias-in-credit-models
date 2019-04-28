@@ -147,49 +147,49 @@ def plot_multiple_correlations(df, col1, col2, col_category, min_corr, plot_widt
     p = figure(title='Correlation between {} and {} by {}'.format(col1, col2, col_category), plot_width=plot_width,
                plot_height=plot_height, tools=["save"])
 
-    one_min_corr = False
+    correlations = []
 
     for ind, cat in enumerate(df[col_category].dropna().unique()):
         df_for_col = df[df[col_category] == cat].dropna()
 
-        corr = df_for_col[col1].corr(df_for_col[col2])
+        correlations.append(df_for_col[col1].corr(df_for_col[col2]))
 
-        if corr >= min_corr:
-            one_min_corr = True
+    if any(corr >= min_corr for corr in correlations):
 
-        source = ColumnDataSource(df_for_col)
-        c = p.circle(x=jitter(col1, width=jitter_scale, range=p.x_range, distribution='normal'), y=col2,
-                     color=circle_colours[ind], alpha=1 - (ind * 0.5 ** (ind)), source=source)
+        for ind, cat in enumerate(df[col_category].dropna().unique()):
+            df_for_col = df[df[col_category] == cat].dropna()
+            source = ColumnDataSource(df_for_col)
+            c = p.circle(x=jitter(col1, width=jitter_scale, range=p.x_range, distribution='normal'), y=col2,
+                         color=circle_colours[ind], alpha=1 - (ind * 0.5 ** (ind)), source=source)
 
-        legend_it.append(('{} (r = {})'.format(cat, round(corr,2)), [c]))
+            legend_it.append(('{} (r = {})'.format(cat, round(correlations[ind],2)), [c]))
 
-    if one_min_corr == False:
+        for ind, cat in enumerate(df[col_category].dropna().unique()):
+            df_for_col = df[df[col_category] == cat].dropna()
+            par = np.polyfit(df_for_col[col1], df_for_col[col2], 1, full=True)
+            slope = par[0][0]
+            intercept = par[0][1]
+            y_predicted = [slope * i + intercept for i in df_for_col[col1]]
 
-        return '', one_min_corr
+            df_for_col['y_predicted'] = y_predicted
 
-    for ind, cat in enumerate(df[col_category].dropna().unique()):
-        df_for_col = df[df[col_category] == cat].dropna()
-        par = np.polyfit(df_for_col[col1], df_for_col[col2], 1, full=True)
-        slope = par[0][0]
-        intercept = par[0][1]
-        y_predicted = [slope * i + intercept for i in df_for_col[col1]]
+            source = ColumnDataSource(df_for_col)
 
-        df_for_col['y_predicted'] = y_predicted
+            p.line(x=col1, y='y_predicted', color=line_colours[ind], alpha=0.8, line_width=2, source=source)
 
-        source = ColumnDataSource(df_for_col)
+        p.title.text_font = p.xaxis.axis_label_text_font = p.yaxis.axis_label_text_font = "Helvetica Neue"
+        p.xgrid.visible = p.ygrid.visible = False
 
-        l = p.line(x=col1, y='y_predicted', color=line_colours[ind], alpha=0.8, line_width=2, source=source)
+        p.xaxis.axis_label = col1
+        p.yaxis.axis_label = col2
 
-    p.title.text_font = p.xaxis.axis_label_text_font = p.yaxis.axis_label_text_font = "Helvetica Neue"
-    p.xgrid.visible = p.ygrid.visible = False
+        legend = Legend(items=legend_it, location=(0, 0))
+        p.add_layout(legend, 'below')
 
-    p.xaxis.axis_label = col1
-    p.yaxis.axis_label = col2
+        return p, True
 
-    legend = Legend(items=legend_it, location=(0, 0))
-    p.add_layout(legend, 'below')
-
-    return p, one_min_corr
+    else:
+        return -1, False
 
 
 def create_plot_layout(df, number_columns, plot_func, ignore_cols=[], **kwargs):
