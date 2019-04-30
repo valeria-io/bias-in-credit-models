@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="042b8f9d-06a7-46e6-905b-fc2a547dfa07" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_exploration/visualisation_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="104" column="89" selection-start-line="104" selection-start-column="89" selection-end-line="104" selection-end-column="89" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb">
+          <provider selected="true" editor-type-id="jupyter-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/pre_process.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="31" column="83" lean-forward="true" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/handle_missing_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>accuracy_score</find>
+      <find>accuracy_scoref</find>
+      <find>bins</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/data_exploration/data_exploration.ipynb" />
+        <option value="$PROJECT_DIR$/data_cleaning/pre_process_raw_data.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/missing_data.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/handle_missing_data.py" />
+        <option value="$PROJECT_DIR$/data_exploration/visualisation_functions.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/pre_process.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="2" />
+    <option name="y" value="23" />
+    <option name="width" value="1669" />
+    <option name="height" value="961" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
+              <item name="data_cleaning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
+              <item name="data_exploration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Discrimination in credit models" type="JupiterNotebook" factoryName="Jupyter Notebook">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="additionalOptions" value="" />
+      <option name="ipnbHost" value="127.0.0.1" />
+      <option name="ipnbPort" value="8888" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="042b8f9d-06a7-46e6-905b-fc2a547dfa07" name="Default Changelist" comment="" />
+      <created>1555774089877</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555774089877</updated>
+      <workItem from="1555781872172" duration="213000" />
+      <workItem from="1555785618860" duration="1514000" />
+      <workItem from="1555866290728" duration="28030000" />
+      <workItem from="1556469784335" duration="3474000" />
+      <workItem from="1556561987208" duration="1356000" />
+    </task>
+    <task id="LOCAL-00001" summary="added initial data and vis functions">
+      <created>1555871187113</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555871187113</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added function to create plot layout and updated plot_dis to include numerical variables">
+      <created>1555877683021</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555877683021</updated>
+    </task>
+    <task id="LOCAL-00003" summary="plotted numerical and categorical variables as grid">
+      <created>1555877716511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555877716511</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added documentation">
+      <created>1555877748287</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555877748287</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added k nearest neighbours to fill missing data">
+      <created>1555944006138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555944006138</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added new columns and types for column formats">
+      <created>1555944035893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555944035893</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added new distribution graphs">
+      <created>1556471424049</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556471424049</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added new distribution graphs">
+      <created>1556471441427</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1556471441427</updated>
+    </task>
+    <task id="LOCAL-00009" summary="relabelling of default status">
+      <created>1556471469863</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556471469863</updated>
+    </task>
+    <task id="LOCAL-00010" summary="kept only distribution graphs">
+      <created>1556472713898</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556472713898</updated>
+    </task>
+    <task id="LOCAL-00011" summary="separated exploration graphs">
+      <created>1556473126345</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1556473126345</updated>
+    </task>
+    <task id="LOCAL-00012" summary="increased min_corr to 0.35">
+      <created>1556480724982</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556480724982</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactored how min_corr is handled">
+      <created>1556480754121</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556480754121</updated>
+    </task>
+    <task id="LOCAL-00014" summary="tracking large files with git lfs">
+      <created>1556604150001</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556604150002</updated>
+    </task>
+    <task id="LOCAL-00015" summary="changed over/under 40">
+      <created>1556604714383</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1556604714383</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="34587000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2" y="23" width="1669" height="961" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21020283" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32978722" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49846342" weight="0.32978722" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49969268" weight="0.3286052" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50092196" side_tool="true" visible="true" weight="0.2600473" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49846342" weight="0.44089836" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Jupyter" order="13" sideWeight="0.49907807" visible="true" weight="0.2600473" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="SciView" order="6" sideWeight="0.4968051" visible="true" weight="0.018438844" />
+      <window_info anchor="right" x="0" y="0" width="367" height="761" id="Documentation" order="7" sideWeight="0.50319487" side_tool="true" visible="true" weight="0.018438844" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added initial data and vis functions" />
+    <MESSAGE value="added function to create plot layout and updated plot_dis to include numerical variables" />
+    <MESSAGE value="plotted numerical and categorical variables as grid" />
+    <MESSAGE value="added documentation" />
+    <MESSAGE value="added k nearest neighbours to fill missing data" />
+    <MESSAGE value="added new columns and types for column formats" />
+    <MESSAGE value="added new distribution graphs" />
+    <MESSAGE value="relabelling of default status" />
+    <MESSAGE value="kept only distribution graphs" />
+    <MESSAGE value="separated exploration graphs" />
+    <MESSAGE value="increased min_corr to 0.35" />
+    <MESSAGE value="refactored how min_corr is handled" />
+    <MESSAGE value="tracking large files with git lfs" />
+    <MESSAGE value="changed over/under 40" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed over/under 40" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/bokeh/plotting/figure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="670" column="4" selection-start-line="670" selection-start-column="4" selection-end-line="670" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Jupyter/runtime/nbserver-1729-open.html" />
+    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration.ipynb" />
+    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_exploration/visualisation_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="104" column="89" selection-start-line="104" selection-start-column="89" selection-end-line="104" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/handle_missing_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/pre_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="31" column="83" lean-forward="true" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
