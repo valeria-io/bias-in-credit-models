@@ -29,7 +29,7 @@ def pre_process_raw_data(raw_data_df):
 
     df["DefaultStatus"] = df["Defaulted"].apply(
         lambda x: "Did not default" if x == '0' else "Defaulted")
-    df["AgeGroup"] = df["Age"].apply(lambda x: "Under 40" if x <= 40 else "Over 40")
+    df["AgeGroup"] = df["Age"].apply(lambda x: "Under 40" if x < 40 else "Over 40")
 
     df = df.replace(-1, np.nan)
 
