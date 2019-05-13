@@ -14,12 +14,13 @@ from bokeh.themes import Theme
 import seaborn as sns
 
 
-def calculate_distribution_as_df(df, col_name, is_categorical, bins):
+def calculate_distribution_as_df(df: pd.DataFrame, col_name: str, is_categorical: str, bins: int):
     """
     Returns dataframe with data for corresponding distribution
     :param df: dataframe with data
     :param col_name: indicates the column needed to calculate distribution
     :param is_categorical: whether distribution should be for categorical or numerical variables
+    :param bins: number of bins in histogram
     :return: distribution as dataframe
     """
     if is_categorical:
@@ -39,8 +40,8 @@ def calculate_distribution_as_df(df, col_name, is_categorical, bins):
     return col_df
 
 
-def plot_bar_chart_distribution(df, col_name, is_categorical=True, plot_width=330, plot_height=330, colour='#00BFA5',
-                                bins=10):
+def plot_bar_chart_distribution(df: pd.DataFrame, col_name: str, is_categorical: bool = True, plot_width: int = 330,
+                                plot_height: int = 330, colour: str = '#00BFA5', bins: int = 10):
     """
     Creates figure with distribution as bar chart
     :param df: dataframe with data
@@ -49,6 +50,7 @@ def plot_bar_chart_distribution(df, col_name, is_categorical=True, plot_width=33
     :param plot_width: figure's width (default = 330)
     :param plot_height: figure's height (default = 330)
     :param colour: fill colour for bar chart
+    :param bins: number of bins
     :return: figure with  bar chart distribution
     """
 
@@ -77,8 +79,22 @@ def plot_bar_chart_distribution(df, col_name, is_categorical=True, plot_width=33
     return p
 
 
-def plot_multiple_bar_chart_distribution(df, col_name, group_category, vars_to_drop=[], is_categorical=True,
-                                         plot_width=330, plot_height=330, colours=["#8c9eff", "#536dfe"]):
+def plot_multiple_bar_chart_distribution(df: pd.DataFrame, col_name: str, group_category: str,
+                                         vars_to_drop: list = [], is_categorical: bool = True, plot_width: int = 330,
+                                         plot_height: int = 330, colours: list = ["#8c9eff", "#536dfe"]):
+    """
+
+    :param df:
+    :param col_name:
+    :param group_category:
+    :param vars_to_drop:
+    :param is_categorical:
+    :param plot_width:
+    :param plot_height:
+    :param colours:
+    :return:
+    """
+
     grouped_table = df.groupby([group_category, col_name]).size() / df.groupby([group_category]).size()
 
     if len(vars_to_drop) > 0:
@@ -104,9 +120,9 @@ def plot_multiple_bar_chart_distribution(df, col_name, group_category, vars_to_d
 
     source = ColumnDataSource(data=dict(x=index_tuple, percentages=percentages, fill_colours=fill_colours))
 
-    p = figure(x_range=FactorRange(*index_tuple), plot_height=250, plot_width=500,  title="Distribution of " + col_name
-                                                                                          + " by" + group_category,
-               toolbar_location=None, tools="save, hover")
+    p = figure(x_range=FactorRange(*index_tuple), plot_height=plot_height, plot_width=plot_width,
+               title="Distribution of " + col_name + " by " + group_category, toolbar_location=None,
+               tools="save, hover")
 
     p.vbar(x='x', top='percentages', color='fill_colours', width=0.9, source=source)
 
@@ -126,21 +142,23 @@ def plot_multiple_bar_chart_distribution(df, col_name, group_category, vars_to_d
     return p
 
 
-def plot_multiple_correlations(df, col1, col2, col_category, min_corr, plot_width=500, plot_height=400, jitter_scale=0.4,
-                               circle_colours=['#ffd54f', '#7986cb', '#4db6ac', '#f06292'],
-                               line_colours=['#ffb300', '#3f51b5', '#00897b', '#d81b60']):
+def plot_multiple_correlations(df: pd.DataFrame, col1: str, col2: str, col_category: str, min_corr: float,
+                               plot_width: int = 500, plot_height: int = 400, jitter_scale: float = 0.4,
+                               circle_colours: list = ['#ffd54f', '#7986cb', '#4db6ac', '#f06292'],
+                               line_colours: list = ['#ffb300', '#3f51b5', '#00897b', '#d81b60']):
     """
-
-    :param df:
-    :param col1:
-    :param col2:
-    :param col_category:
-    :param plot_width:
-    :param plot_height:
-    :param jitter_scale:
-    :param circle_colours:
-    :param line_colours:
-    :return:
+    Plots chart with correlation lines and scatter plots by category
+    :param df: dataframe with data
+    :param col1: column name for first numerical variable
+    :param col2: column name for second numerical variable
+    :param col_category: column category
+    :param min_corr: minimum correlation required for one of both categories to plot the chart
+    :param plot_width: plot's width
+    :param plot_height: plot's height
+    :param jitter_scale: jitter space separation for scatter plot
+    :param circle_colours: circle colours for scatter plot
+    :param line_colours: line colours for correlation lines
+    :return: chart with correlation lines and scatter plots by category
     """
     legend_it = []
 
@@ -162,7 +180,7 @@ def plot_multiple_correlations(df, col1, col2, col_category, min_corr, plot_widt
             c = p.circle(x=jitter(col1, width=jitter_scale, range=p.x_range, distribution='normal'), y=col2,
                          color=circle_colours[ind], alpha=1 - (ind * 0.5 ** (ind)), source=source)
 
-            legend_it.append(('{} (r = {})'.format(cat, round(correlations[ind],2)), [c]))
+            legend_it.append(('{} (r = {})'.format(cat, round(correlations[ind], 2)), [c]))
 
         for ind, cat in enumerate(df[col_category].dropna().unique()):
             df_for_col = df[df[col_category] == cat].dropna()
@@ -192,7 +210,7 @@ def plot_multiple_correlations(df, col1, col2, col_category, min_corr, plot_widt
         return -1, False
 
 
-def create_plot_layout(df, number_columns, plot_func, ignore_cols=[], **kwargs):
+def create_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: callable, ignore_cols: list = [], **kwargs):
     """
     Plots a grid of plots based on number of columns given and plot function to be used
     :param df: dataframe with all columns to be plotted
@@ -219,12 +237,14 @@ def create_plot_layout(df, number_columns, plot_func, ignore_cols=[], **kwargs):
     show(layout)
 
 
-def create_corr_plot_layout(df, number_columns, plot_func, min_corr=0.3, ignore_cols=[], **kwargs):
+def create_corr_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: callable, min_corr: float = 0.3,
+                            ignore_cols: list = [], **kwargs):
     """
     Plots a grid of corr plots based on number of columns given and plot function to be used
     :param df: dataframe with all columns to be plotted
     :param number_columns: the number of columns that the grid should have
     :param plot_func: the plot function to call for each plot in the grid
+    :param min_corr:
     :param ignore_cols: columns that should not be used for plotting
     :param kwargs: any extra variable that the plot function may require
     :return: plots a grid with graphs
@@ -233,7 +253,7 @@ def create_corr_plot_layout(df, number_columns, plot_func, min_corr=0.3, ignore_
     cols_to_plot = [col for col in df.columns if col not in ignore_cols]
 
     for ind, col1 in enumerate(cols_to_plot):
-        second_cols = cols_to_plot[ind+1:]
+        second_cols = cols_to_plot[ind + 1:]
         if len(second_cols) == 0:
             break;
         layout_grid = []
@@ -251,5 +271,3 @@ def create_corr_plot_layout(df, number_columns, plot_func, min_corr=0.3, ignore_
         if len(layout_grid) != 0:
             layout = gridplot(layout_grid)
             show(layout)
-
-
