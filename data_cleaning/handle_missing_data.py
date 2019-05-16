@@ -71,8 +71,8 @@ def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test, y_t
     :param y_train: testing set
     :return: value for the optimal k, list of neighbours tested and miss-classification scores for each neighbour as a list
     """
-    #@todo: update to np.arange(5, 100, 5)
-    neighbors = np.arange(5, 15, 5)
+    #@todo: update to np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
+    neighbors = np.arange(5, 100, 5)
 
     cv_scores = []
 
@@ -98,8 +98,8 @@ def train_k_nn_regressor(x_train, y_train, x_test, y_test):
     :param y_train: testing set
     :return: value for the optimal k, list of neighbours tested and MSE scores for each neighbour as a list
     """
-    #@todo: update to np.arange(5, 100, 5)
-    neighbors = np.arange(5, 15, 5)
+    #@todo: update to np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
+    neighbors = np.arange(5, 100, 5)
 
     cv_scores = []
 
@@ -127,11 +127,11 @@ def get_knn_score_on_test(y_test, y_pred, is_classifier):
     return knn_test_score
 
 
-def predict_with_knn(optimal_k, x_train, y_train, x_test, is_classifier):
+def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.DataFrame, is_classifier: bool):
     """
     Predicts values using knn and optimal k
     :param optimal_k: k that reduces mae the most
-    :param x_train: training features set
+    :param x_train: training set
     :param y_train: training objective variable
     :param x_test: testing features set
     :param y_test: testing objective variable
@@ -327,7 +327,6 @@ def get_median_prediction_score_on_test(y_train, y_test):
 
 
 def get_mode_prediction_score_on_test(y_train, y_test):
-    #mode_predictions = [mode(y_train.astype(str))] * len(y_test)
     mode_predictions = [pd.Series(y_train.astype(str)).value_counts().index[0]] * len(y_test)
     score_on_test = accuracy_score(y_test, mode_predictions)
     return score_on_test
@@ -344,10 +343,13 @@ def predict_with_mode(col_without_na, col_with_na):
 
 
 def predict_with_median_group(df_with_nan_in_y, train_df, optimal_grouping_col, col_to_be_filled):
-    median_by_group_df = train_df.groupby(optimal_grouping_col)[[col_to_be_filled]].median()
+    median_by_group_df = train_df.groupby(optimal_grouping_col)[[col_to_be_filled]].median().reset_index()
 
     df_with_nan_in_y = df_with_nan_in_y.merge(median_by_group_df, how='left', suffixes=('', '_predicted'),
                                               on=[optimal_grouping_col])
+
+    # If no data avaiable on optimal_grouping_col, just fill with median
+    df_with_nan_in_y[col_to_be_filled + '_predicted'].fillna(train_df[col_to_be_filled].median(), inplace=True)
 
     return df_with_nan_in_y[col_to_be_filled + '_predicted'].tolist()
 
@@ -358,6 +360,9 @@ def predict_with_mode_group(df_with_nan_in_y, train_df, optimal_grouping_col, co
 
     df_with_nan_in_y = df_with_nan_in_y.merge(mode_by_group_df, how='left', suffixes=('', '_predicted'),
                                               on=[optimal_grouping_col])
+
+    # If no data avaiable on optimal_grouping_col, just fill with mode
+    df_with_nan_in_y[col_to_be_filled + '_predicted'].fillna(train_df[col_to_be_filled].value_counts().index[0], inplace=True)
 
     return df_with_nan_in_y[col_to_be_filled + '_predicted'].tolist()
 
@@ -376,7 +381,7 @@ def predict_regression(df_with_nan_in_y, col_to_be_filled, x_train, y_train, tra
 
 def predict_classification(df_with_nan_in_y, col_to_be_filled, x_train, y_train, train_df, x_for_pred, best_model, optimal_k, optimal_grouping_col):
     if best_model == 'knn':
-        y_for_pred = predict_with_knn(optimal_k, x_train, y_train, x_for_pred, is_classifier=False)
+        y_for_pred = predict_with_knn(optimal_k, x_train, y_train, x_for_pred, is_classifier=True)
 
     elif best_model == 'group_mode':
         y_for_pred = predict_with_mode_group(df_with_nan_in_y, train_df, optimal_grouping_col, col_to_be_filled)
@@ -386,7 +391,6 @@ def predict_classification(df_with_nan_in_y, col_to_be_filled, x_train, y_train,
     return y_for_pred
 
 
-# @todo: create a signle function as in fill_na_with_knn that checks for results of each single one and fills based on the best one
 if __name__ == "__main__":
     df = pd.read_csv("../data/df_selection.csv", index_col=[0])
     df = pre_process_raw_data(df)
