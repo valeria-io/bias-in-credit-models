@@ -65,8 +65,7 @@ def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.
     :param y_test: y testing series
     :return: value for the optimal k, list of neighbours tested and miss-classification scores for each neighbour as a list
     """
-    # @todo: update to np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
-    neighbors = [5]
+    neighbors = np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
 
     cv_scores = []
 
@@ -95,8 +94,7 @@ def train_k_nn_regressor(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.D
     :param y_test: y testing series
     :return: value for the optimal k, list of neighbours tested and MSE scores for each neighbour as a list
     """
-    # @todo: update to np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
-    neighbors = [5]
+    neighbors = np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
 
     cv_scores = []
 
