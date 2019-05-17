@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, mean_absolute_error
 
 def raw_df_pre_process_knn_df(df_raw: pd.DataFrame) -> pd.DataFrame:
     """
-    Filters and processes data for training of knn
+    Filters and processes data for the training of knn
     :param df_raw: original data with loans without processing
     :return: processed dataset for training of knn
     """
@@ -23,10 +23,11 @@ def raw_df_pre_process_knn_df(df_raw: pd.DataFrame) -> pd.DataFrame:
     df_processed = df_processed.replace(-1, np.nan)
     return df_processed
 
+
 def x_convert_to_num_col(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Selects the the columns needed to train Knn and converts column types when needed
-    :param df: dataframe with all data
+    :param df_: dataframe with loan details
     :return: dataframe with columns needed for knn and in the right column type format
     """
     df_processed = df_.copy()
@@ -54,12 +55,14 @@ def x_convert_to_num_col(df_: pd.DataFrame) -> pd.DataFrame:
     return df_processed
 
 
-# @todo: check if it is pd.Series in ytrain
-def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series):
+def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series)->\
+        (int, float):
     """
     Runs k nearest neighbours classifier with cross validation and finds optimal k that reduces MSE
-    :param x_train: training set
-    :param y_train: testing set
+    :param x_train: x training dataframe
+    :param y_train: y training series
+    :param x_test: x testing dataframe
+    :param y_test: y testing series
     :return: value for the optimal k, list of neighbours tested and miss-classification scores for each neighbour as a list
     """
     # @todo: update to np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
@@ -82,11 +85,14 @@ def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.
     return optimal_k, knn_score_on_test
 
 
-def train_k_nn_regressor(x_train, y_train, x_test, y_test):
+def train_k_nn_regressor(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series)->\
+        (int, float):
     """
     Runs k nearest neighbours with cross validation and finds optimal k that reduces MSE
-    :param X_train: training set
-    :param y_train: testing set
+    :param x_train: x training dataframe
+    :param y_train: y training series
+    :param x_test: x testing dataframe
+    :param y_test: y testing series
     :return: value for the optimal k, list of neighbours tested and MSE scores for each neighbour as a list
     """
     # @todo: update to np.concatenate([np.arange(5, 50, 5), np.arange(50, 100, 10), np.arange(100, 550, 50)])
@@ -109,7 +115,15 @@ def train_k_nn_regressor(x_train, y_train, x_test, y_test):
     return optimal_k, knn_score_on_test
 
 
-def get_knn_score_on_test(y_test, y_pred, is_classifier):
+def get_knn_score_on_test(y_test: pd.Series, y_pred: pd.Series, is_classifier: bool)->float:
+    """
+    Returns the performance score on test: miss-classification rate for classifier or mean absolute error (MAE) for
+    regression
+    :param y_test: array with actuals
+    :param y_pred: array with predicted values
+    :param is_classifier: whether it is classier or regression
+    :return: value for miss-classification rate for classifier or mean absolute error (MAE) for regression
+    """
     if is_classifier:
         knn_test_score = accuracy_score(y_test, y_pred)
     else:
@@ -118,16 +132,16 @@ def get_knn_score_on_test(y_test, y_pred, is_classifier):
     return knn_test_score
 
 
-def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.DataFrame, is_classifier: bool):
+def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.DataFrame, is_classifier: bool)\
+        ->np.array:
     """
     Predicts values using knn and optimal k
     :param optimal_k: k that reduces mae the most
     :param x_train: training set
     :param y_train: training objective variable
     :param x_test: testing features set
-    :param y_test: testing objective variable
-    :param classifier: indicates wether knn is for Classifier or Regression
-    :return: predictions and knn prediction accuracy
+    :param is_classifier: indicates whether knn is for Classifier or Regression
+    :return: array with knn predictions
     """
     if is_classifier:
         knn = KNeighborsClassifier(n_neighbors=optimal_k)
@@ -141,13 +155,14 @@ def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.
     return y_pred
 
 
-def get_train_tests_sets_for_knn(df_, y_col):
+def get_train_tests_sets_for_knn(df_: pd.DataFrame, y_col: str)->\
+        (pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame):
     """
     Creates train and test tests for knn. Training set is the df with rows, where there are no null values in y_col.
     Testing set is the df with rows, where there are only null values in y_col. Missing values in X are filled with
     corresponding median.
-    :param df: dataframe used to run knn
-    :param y_col: the column we're trying to predict
+    :param df_: dataframe used to run knn
+    :param y_col: the column, whose null values we're trying to replace with knn predictions
     :return: train and test dataframes for X and y
     """
     df_without_nan_in_y = df_.dropna(subset=[y_col])
