@@ -55,7 +55,7 @@ def x_convert_to_num_col(df_: pd.DataFrame) -> pd.DataFrame:
     return df_processed
 
 
-def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series)->\
+def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series) -> \
         (int, float):
     """
     Runs k nearest neighbours classifier with cross validation and finds optimal k that reduces MSE
@@ -85,7 +85,7 @@ def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.
     return optimal_k, knn_score_on_test
 
 
-def train_k_nn_regressor(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series)->\
+def train_k_nn_regressor(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series) -> \
         (int, float):
     """
     Runs k nearest neighbours with cross validation and finds optimal k that reduces MSE
@@ -115,7 +115,7 @@ def train_k_nn_regressor(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.D
     return optimal_k, knn_score_on_test
 
 
-def get_knn_score_on_test(y_test: pd.Series, y_pred: pd.Series, is_classifier: bool)->float:
+def get_knn_score_on_test(y_test: pd.Series, y_pred: pd.Series, is_classifier: bool) -> float:
     """
     Returns the performance score on test: miss-classification rate for classifier or mean absolute error (MAE) for
     regression
@@ -132,8 +132,8 @@ def get_knn_score_on_test(y_test: pd.Series, y_pred: pd.Series, is_classifier: b
     return knn_test_score
 
 
-def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.DataFrame, is_classifier: bool)\
-        ->np.array:
+def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.DataFrame, is_classifier: bool) \
+        -> np.array:
     """
     Predicts values using knn and optimal k
     :param optimal_k: k that reduces mae the most
@@ -155,7 +155,7 @@ def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.
     return y_pred
 
 
-def get_train_tests_sets_for_knn(df_: pd.DataFrame, y_col: str)->\
+def get_train_tests_sets_for_knn(df_: pd.DataFrame, y_col: str) -> \
         (pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame):
     """
     Creates train and test tests for knn. Training set is the df with rows, where there are no null values in y_col.
@@ -183,6 +183,3 @@ def get_train_tests_sets_for_knn(df_: pd.DataFrame, y_col: str)->\
     x_for_pred = x_for_pred.fillna(x.median())
 
     return x_train, x_test, x_for_pred, y_train, y_test, y_for_pred
-
-
-

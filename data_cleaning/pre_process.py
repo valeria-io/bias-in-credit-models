@@ -25,7 +25,6 @@ def pre_process_raw_data(raw_data_df):
     df['CreditScoreEeMini'] = df['CreditScoreEeMini'].astype(str)
     df['isLate'] = df['isLate'].astype(str)
     df['Defaulted'] = df['Defaulted'].astype(str)
-    #df['NrOfDependants'] = df['NrOfDependants'].astype(str)
 
     df["DefaultStatus"] = df["Defaulted"].apply(
         lambda x: "Did not default" if x == '0' else "Defaulted")
@@ -34,5 +33,3 @@ def pre_process_raw_data(raw_data_df):
     df = df.replace(-1, np.nan)
 
     return df
-
-

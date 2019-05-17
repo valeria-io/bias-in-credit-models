@@ -24,7 +24,7 @@ def get_train_tests_sets_for_mode_mean(df_: pd.DataFrame, y_col: str) -> (pd.Dat
     return train_df, test_df, df_with_nan_in_y
 
 
-def train_with_mode_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df: pd.DataFrame)->(str, float):
+def train_with_mode_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df: pd.DataFrame) -> (str, float):
     """
     This function goes through different columns in dataframe and each time it groups the dataframe and calculates the
     most frequent value (mode) for the column we're interested in filling. For each iteration, it keeps track of the
@@ -91,7 +91,7 @@ def train_with_median_group(col_to_be_filled: str, train_df: pd.DataFrame, test_
     return optimal_grouping_col, best_mae_on_test
 
 
-def add_nearest_z(df_: pd.DataFrame)->pd.DataFrame:
+def add_nearest_z(df_: pd.DataFrame) -> pd.DataFrame:
     """
     For each numerical column, it creates a new columns that assigns the the nearest z-value.
     :param df_: Dataframe with loans details
@@ -114,7 +114,7 @@ def get_columns_for_grouping():
             'PreviousEarlyRepaymentsBefoleLoan_z', 'PreviousEarlyRepaymentsCountBeforeLoan_z']
 
 
-def get_median_prediction_score_on_test(y_train: pd.Series, y_test: pd.Series)->float:
+def get_median_prediction_score_on_test(y_train: pd.Series, y_test: pd.Series) -> float:
     """
     Calculates accuracy on test based on prediction from simply taking the middle value (median)
     :param y_train: training list of values for the column whose null values we intend to fill
@@ -127,7 +127,7 @@ def get_median_prediction_score_on_test(y_train: pd.Series, y_test: pd.Series)->
     return score_on_test
 
 
-def get_mode_prediction_score_on_test(y_train: pd.Series, y_test: pd.Series)->float:
+def get_mode_prediction_score_on_test(y_train: pd.Series, y_test: pd.Series) -> float:
     """
     Calculates accuracy on test based on prediction from simply taking the most frequent value (mode)
     :param y_train: training list of values for the column whose null values we intend to fill
@@ -140,7 +140,7 @@ def get_mode_prediction_score_on_test(y_train: pd.Series, y_test: pd.Series)->fl
     return score_on_test
 
 
-def predict_with_median(col_without_na: pd.Series, col_with_na: pd.Series)->list:
+def predict_with_median(col_without_na: pd.Series, col_with_na: pd.Series) -> list:
     """
     Predicts values to replace NAs by taking the median of the column without NAs.
     :param col_without_na: series from the column whose NAs we're tyring to replace, with no NAs present
@@ -151,7 +151,7 @@ def predict_with_median(col_without_na: pd.Series, col_with_na: pd.Series)->list
     return median_predictions
 
 
-def predict_with_mode(col_without_na: pd.Series, col_with_na: pd.Series)->list:
+def predict_with_mode(col_without_na: pd.Series, col_with_na: pd.Series) -> list:
     """
     Predicts values to replace NAs by taking the mode of the column without NAs.
     :param col_without_na: series from the column whose NAs we're tyring to replace, with no NAs present
@@ -163,7 +163,7 @@ def predict_with_mode(col_without_na: pd.Series, col_with_na: pd.Series)->list:
 
 
 def predict_with_median_group(df_with_nan_in_y: pd.DataFrame, train_df: pd.DataFrame, optimal_grouping_col: str,
-                              col_to_be_filled: str)->list:
+                              col_to_be_filled: str) -> list:
     """
     Predicts values to replace NAs by taking the median from the corresponding group. If there
     is no data to calculate the group's median, we simply use the median from the whole column.
@@ -184,7 +184,7 @@ def predict_with_median_group(df_with_nan_in_y: pd.DataFrame, train_df: pd.DataF
 
 
 def predict_with_mode_group(df_with_nan_in_y: pd.DataFrame, train_df: pd.DataFrame, optimal_grouping_col: str,
-                              col_to_be_filled: str)->list:
+                            col_to_be_filled: str) -> list:
     """
     Predicts values to replace NAs by calculating the mode (most frequent value) from the corresponding group. If there
     is no data to calculate the group's mode, we simply use the mode from the whole column.
@@ -204,4 +204,3 @@ def predict_with_mode_group(df_with_nan_in_y: pd.DataFrame, train_df: pd.DataFra
                                                              inplace=True)
 
     return df_with_nan_in_y[col_to_be_filled + '_predicted'].tolist()
-

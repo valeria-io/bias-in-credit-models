@@ -15,11 +15,10 @@ from data_cleaning.fill_with_median_mode import \
 from data_cleaning.fill_with_knn import \
     get_train_tests_sets_for_knn, \
     train_k_nn_regressor, \
-    train_k_nn_classifier,\
+    train_k_nn_classifier, \
     predict_with_knn
 
 from data_cleaning.pre_process import pre_process_raw_data
-
 
 
 def fill_na(df_: pd.DataFrame) -> pd.DataFrame:
@@ -93,7 +92,7 @@ def fill_na(df_: pd.DataFrame) -> pd.DataFrame:
 
 def predict_regression(best_model: str, col_to_be_filled: str, x_train: pd.DataFrame, y_train: pd.Series,
                        x_for_pred: pd.DataFrame, optimal_k: int, train_df: pd.DataFrame, df_with_nan_in_y: pd.DataFrame,
-                       optimal_grouping_col: str)->list:
+                       optimal_grouping_col: str) -> list:
     """
     Predicts values for the numerical column whose NAs need to be replaced using the best model to fill null values.
 
@@ -121,7 +120,7 @@ def predict_regression(best_model: str, col_to_be_filled: str, x_train: pd.DataF
 
 def predict_classification(best_model: str, col_to_be_filled: str, x_train: pd.DataFrame, y_train: pd.Series,
                            x_for_pred: pd.DataFrame, optimal_k: int, train_df: pd.DataFrame,
-                           df_with_nan_in_y: pd.DataFrame, optimal_grouping_col: str)->list:
+                           df_with_nan_in_y: pd.DataFrame, optimal_grouping_col: str) -> list:
     """
     Predicts values for the numerical column whose NAs need to be replaced using the best model to fill null values.
 
