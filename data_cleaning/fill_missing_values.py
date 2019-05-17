@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from data_cleaning.fill_with_median_mode import \
+from data_cleaning.median_mode_forecast_for_na import \
     get_train_tests_sets_for_mode_mean, \
     get_mode_prediction_score_on_test, \
     get_median_prediction_score_on_test, \
@@ -12,7 +12,7 @@ from data_cleaning.fill_with_median_mode import \
     predict_with_median_group, \
     predict_with_mode_group
 
-from data_cleaning.fill_with_knn import \
+from data_cleaning.knn_forecast_for_na import \
     get_train_tests_sets_for_knn, \
     train_k_nn_regressor, \
     train_k_nn_classifier, \
@@ -25,9 +25,10 @@ def fill_na(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Fills null values based in dataframe with loans. To do this, it tries out three different forms of fill the values:
     1) Using K nearest neighbours: regression for numerical columns and classification for non-numerical columns
-    2) Taking the most frequent value based on a group: median based on group for numerical columns and mode
-    based on group for non-numerical columns
-    3) Taking the most frequent value for whole column: median for numerical columns and mode for non-numerical columns
+    2) Taking the middle value or most frequent value based on a group: median based on group for numerical columns and
+    mode based on group for non-numerical columns
+    3) Taking the middle value or the most frequent value for whole column: median for numerical columns and mode for
+    non-numerical columns
 
     :param df_: raw dataframe with loans
     :return: dataframe with loans whose null values has been replaced/filled
@@ -100,7 +101,8 @@ def predict_regression(best_model: str, col_to_be_filled: str, x_train: pd.DataF
     :param col_to_be_filled: name of the column that needs to be filled
     :param x_train: dataframe used for training knn
     :param y_train: series of the column of interest for training
-    :param x_for_pred: dataframe that will be used by knn for predicting the new values (does not contain col to be filled)
+    :param x_for_pred: dataframe that will be used by knn for predicting the new values (does not contain col to be
+    filled)
     :param optimal_k: optimal number of neighbours for knn
     :param train_df: complete training dataframe
     :param df_with_nan_in_y: dataframe that contains null values in the column whose null values will be filled
@@ -128,7 +130,8 @@ def predict_classification(best_model: str, col_to_be_filled: str, x_train: pd.D
     :param col_to_be_filled: name of the column that needs to be filled
     :param x_train: dataframe used for training knn
     :param y_train: series of the column of interest for training
-    :param x_for_pred: dataframe that will be used by knn for predicting the new values (does not contain col to be filled)
+    :param x_for_pred: dataframe that will be used by knn for predicting the new values (does not contain col to be
+    filled)
     :param optimal_k: optimal number of neighbours for knn
     :param train_df: complete training dataframe
     :param df_with_nan_in_y: dataframe that contains null values in the column whose null values will be filled
@@ -149,6 +152,5 @@ def predict_classification(best_model: str, col_to_be_filled: str, x_train: pd.D
 if __name__ == "__main__":
     df = pd.read_csv("../data/df_selection.csv", index_col=[0])
     df = pre_process_raw_data(df)
-    # df_na_filled_with_knn = fill_na_with_k_nearest_neighbours(df, show_k_results=True)
-    fill_na(df)
-    # df_na_filled.to_csv("../data/df_cleaned.csv")
+    df_na_filled=fill_na(df)
+    df_na_filled.to_csv("../data/df_cleaned.csv")
