@@ -150,7 +150,7 @@ def predict_classification(best_model: str, col_to_be_filled: str, x_train: pd.D
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("../data/df_selection.csv", index_col=[0])
+    df = pd.read_csv("../data/LoanData.csv", index_col=[0], low_memory=False)
     df = pre_process_raw_data(df)
-    df_na_filled=fill_na(df)
-    df_na_filled.to_csv("../data/df_cleaned.csv")
+    df = fill_na(df)
+    df.to_csv("../data/LoanDataProcessed.csv")

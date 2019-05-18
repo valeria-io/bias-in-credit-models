@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 
-def filter_rows(df_: pd.DataFrame)->pd.DataFrame:
+
+def filter_rows(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Returns only loans from Estonia (EE) and that are not longer running.
     :param df_: selected dataframe with loan details
@@ -10,7 +11,7 @@ def filter_rows(df_: pd.DataFrame)->pd.DataFrame:
     return df_[(df_["Country"] == "EE") & (df_["Status"] != "Current")]
 
 
-def filter_columns(df_: pd.DataFrame)->pd.DataFrame:
+def filter_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Selects only the columns of the loans dataframe required for the project.
     :param df_: raw dataframe with loan details
@@ -36,7 +37,8 @@ def filter_columns(df_: pd.DataFrame)->pd.DataFrame:
 
     return df_[selected_columns]
 
-def rename_columns(df_: pd.DataFrame)->pd.DataFrame:
+
+def rename_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Renames values that should be null or numerical values that are in fact categorical.
     :param df_: selected and filtered dataframe with loan details
@@ -81,7 +83,7 @@ def rename_columns(df_: pd.DataFrame)->pd.DataFrame:
     return df_
 
 
-def add_new_columns(df_: pd.DataFrame)->pd.DataFrame:
+def add_new_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Creates new columns needed for initial data exploration
     :param df_: dataframe with loan details
@@ -95,7 +97,8 @@ def add_new_columns(df_: pd.DataFrame)->pd.DataFrame:
 
     return df_
 
-def reformat_columns(df_: pd.DataFrame)->pd.DataFrame:
+
+def reformat_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     R-formats the column types
     :param raw_data_df: dataframe with loan details
@@ -119,7 +122,12 @@ def reformat_columns(df_: pd.DataFrame)->pd.DataFrame:
     return df_
 
 
-def pre_process_raw_data(df_):
+def pre_process_raw_data(df_: pd.DataFrame) -> pd.DataFrame:
+    """
+    Selects the required data and formats it as needed for the projects.
+    :param df_: raw dataframe with loan details
+    :return: processed dataframe with loans
+    """
     df_ = filter_columns(df_)
     df_ = filter_rows(df_)
     df_ = rename_columns(df_)
@@ -127,9 +135,3 @@ def pre_process_raw_data(df_):
     df_ = reformat_columns(df_)
 
     return df_
-
-
-if __name__ == "__main__":
-    df = pd.read_csv("../data/LoanData.csv", index_col=[0], low_memory=False)
-    df = pre_process_raw_data(df)
-    df.to_csv("../data/df_selection.csv")
