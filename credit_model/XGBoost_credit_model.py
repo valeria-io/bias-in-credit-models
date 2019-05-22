@@ -8,7 +8,13 @@ from sklearn.metrics import roc_auc_score
 from credit_model.prepare_model_dataframe import prepare_dataframe
 
 
-def find_best_xgboost_model(train_x, train_y):
+def find_best_xgboost_model(train_x: pd.DataFrame, train_y: pd.Series) -> (dict, float):
+    """
+    Runs a grid search to find the tuning parameters that maxisimise the area under the curve (AUC)
+    :param train_x: training data frame with loan details
+    :param train_y: default target column for training
+    :return: best parameters and corresponding AUC score
+    """
     scale_pos_weight = (len(train_y) - train_y.sum()) / train_y.sum()
 
     param_test = {
@@ -29,7 +35,17 @@ def find_best_xgboost_model(train_x, train_y):
     return gsearch.best_params_, gsearch.best_score_
 
 
-def xgboost_predict(best_params_, train_x, train_y, test_x, test_y):
+def xgboost_predict(best_params_: dict, train_x: pd.DataFrame, train_y: pd.Series, test_x: pd.DataFrame,
+                    test_y: pd.Series) -> (list, float):
+    """
+    Using the xgboost model parameters, it predicts the probabilities of defaulting.
+    :param best_params_: best tuning parameters
+    :param train_x: training dataframe with loan details
+    :param train_y: default target column for training
+    :param test_x: testing dataframe with loan details
+    :param test_y: default target column for testing
+    :return: series of probabilities whether loan entry will default or not and corresponding model's AUC score
+    """
     scale_pos_weight = (len(train_y) - train_y.sum()) / train_y.sum()
     xgb_model = XGBClassifier(objective='binary:logistic',
                               scale_pos_weight=scale_pos_weight,
@@ -46,7 +62,14 @@ def xgboost_predict(best_params_, train_x, train_y, test_x, test_y):
     return predicted_probabilities_, auc_
 
 
-def get_train_test_dataframes(df_, target_variable):
+def get_train_test_dataframes(df_: pd.DataFrame, target_variable: str) -> (
+pd.DataFrame, pd.DataFrame, pd.Series, pd.Series):
+    """
+    Splits dataframe into features and target variable for train and test.
+    :param df_: dataframe loan details
+    :param target_variable: name of default target variable
+    :return: x dataframes and y series for train and test
+    """
     X = df_.drop(target_variable, axis=1)
     y = df_[target_variable]
     train_x, test_x, train_y, test_y = train_test_split(X.as_matrix(), y.as_matrix(), test_size=0.25, random_state=42)
@@ -61,4 +84,10 @@ if __name__ == "__main__":
     print('Best Parameters: {} | Best AUC: {}'.format(best_params, best_score))
     predicted_probabilities, auc = xgboost_predict(best_params, train_X, train_Y, test_X, test_Y)
     print("AUC: {}".format(auc))
-    pd.DataFrame({'actuals': test_Y, 'predicted_probabilities': predicted_probabilities}).to_csv('../data/actuals_and_forecasts.csv')
+    """
+    This returned:
+    Best Parameters: {'learning_rate': 0.05, 'max_depth': 9, 'n_estimators': 300} | Best AUC: 0.7570655614472669
+    AUC: 0.7638599401900094
+    """
+    pd.DataFrame({'actuals': test_Y, 'predicted_probabilities': predicted_probabilities}).to_csv(
+        '../data/actuals_and_forecasts.csv')
