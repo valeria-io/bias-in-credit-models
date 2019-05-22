@@ -271,3 +271,38 @@ def create_corr_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: ca
         if len(layout_grid) != 0:
             layout = gridplot(layout_grid)
             show(layout)
+
+
+def plot_roc_curve(fpr: list, tpr: list, title: str = 'ROC curve', x_axis_label: str = 'False Positive Rate (FPR)',
+                   y_axis_label: str = 'True Positive Rate (TPR)'):
+    """
+    Plots ROC curve
+    :param fpr: list of false positve rates
+    :param tpr: list of true positive rates
+    :param title: title for the plot (default: ROC curve)
+    :param x_axis_label: name for the x axis (default: False Positive Rate (FPR))
+    :param y_axis_label: name for the y axis (default: True Positive Rate (TPR))
+    :return: plots ROC curve plot
+    """
+
+    p = figure(plot_width=370, plot_height=350, title=title)
+
+    p.line(fpr, tpr, line_width=2, line_color="#00BFA5")
+
+    mid_line = np.arange(0, 1.1, 0.1)
+    p.line(mid_line, mid_line, line_color="#616161", line_dash='dashed')
+
+    p.legend.location = "bottom_right"
+
+    p.y_range.start = 0
+    p.x_range.start = 0
+    p.y_range.end = 1
+    p.x_range.end = 1
+
+    p.xaxis.axis_label = x_axis_label
+    p.yaxis.axis_label = y_axis_label
+    p.title.text_font = p.xaxis.axis_label_text_font = p.yaxis.axis_label_text_font = "Helvetica Neue"
+
+    p.xgrid.grid_line_color = None
+    p.ygrid.grid_line_color = None
+    return p
