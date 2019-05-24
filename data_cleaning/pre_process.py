@@ -5,7 +5,9 @@ import numpy as np
 def filter_rows(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Returns only loans from Estonia (EE) and that are not longer running.
+
     :param df_: selected dataframe with loan details
+
     :return: EE and non-current dataframe with loans
     """
     return df_[(df_["Country"] == "EE") & (df_["Status"] != "Current")]
@@ -14,7 +16,9 @@ def filter_rows(df_: pd.DataFrame) -> pd.DataFrame:
 def filter_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Selects only the columns of the loans dataframe required for the project.
+
     :param df_: raw dataframe with loan details
+
     :return: dataframe with loans with selected columns
     """
     selected_columns = ['LoanNumber', 'ListedOnUTC', 'UserName', 'NewCreditCustomer',
@@ -41,8 +45,10 @@ def filter_columns(df_: pd.DataFrame) -> pd.DataFrame:
 def rename_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Renames values that should be null or numerical values that are in fact categorical.
+
     :param df_: selected and filtered dataframe with loan details
-    :return: loan dataframe with replaed values
+
+    :return: loan dataframe with replaced values
     """
     df_ = df_.replace(-1, np.nan)
 
@@ -86,7 +92,9 @@ def rename_columns(df_: pd.DataFrame) -> pd.DataFrame:
 def add_new_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Creates new columns needed for initial data exploration
+
     :param df_: dataframe with loan details
+
     :return: dataframe with loan details and new columns
     """
     df_["isLate"] = df_['Status'].apply(lambda x: 1 if x == "Late" else 0)
@@ -101,7 +109,9 @@ def add_new_columns(df_: pd.DataFrame) -> pd.DataFrame:
 def reformat_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     R-formats the column types
+
     :param raw_data_df: dataframe with loan details
+
     :return: dataframe with loan details with reformate dcolumns
     """
 
@@ -125,7 +135,9 @@ def reformat_columns(df_: pd.DataFrame) -> pd.DataFrame:
 def pre_process_raw_data(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Selects the required data and formats it as needed for the projects.
+
     :param df_: raw dataframe with loan details
+
     :return: processed dataframe with loans
     """
     df_ = filter_columns(df_)

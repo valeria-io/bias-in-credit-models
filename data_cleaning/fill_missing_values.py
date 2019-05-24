@@ -107,6 +107,7 @@ def predict_regression(best_model: str, col_to_be_filled: str, x_train: pd.DataF
     :param train_df: complete training dataframe
     :param df_with_nan_in_y: dataframe that contains null values in the column whose null values will be filled
     :param optimal_grouping_col: the optimal column to group and calculate median as a forecast to fill null values
+
     :return: predicted values used to replace NAs based on the best model fill null values
     """
     if best_model == 'knn':
@@ -136,6 +137,7 @@ def predict_classification(best_model: str, col_to_be_filled: str, x_train: pd.D
     :param train_df: complete training dataframe
     :param df_with_nan_in_y: dataframe that contains null values in the column whose null values will be filled
     :param optimal_grouping_col: the optimal column to group and calculate median as a forecast to fill null values
+
     :return: predicted values used to replace NAs based on the best model fill null values
     """
     if best_model == 'knn':

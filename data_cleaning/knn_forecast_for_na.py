@@ -4,10 +4,13 @@ from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import accuracy_score, mean_absolute_error
 
+from typing import Tuple
+
 
 def raw_df_pre_process_knn_df(df_raw: pd.DataFrame) -> pd.DataFrame:
     """
     Filters and processes data for the training of knn
+
     :param df_raw: original data with loans without processing
     :return: processed dataset for training of knn
     """
@@ -27,6 +30,7 @@ def raw_df_pre_process_knn_df(df_raw: pd.DataFrame) -> pd.DataFrame:
 def x_convert_to_num_col(df_: pd.DataFrame) -> pd.DataFrame:
     """
     Selects the the columns needed to train Knn and converts column types when needed
+
     :param df_: dataframe with loan details
     :return: dataframe with columns needed for knn and in the right column type format
     """
@@ -56,9 +60,10 @@ def x_convert_to_num_col(df_: pd.DataFrame) -> pd.DataFrame:
 
 
 def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series) -> \
-        (int, float):
+        Tuple[int, float]:
     """
     Runs k nearest neighbours classifier with cross validation and finds optimal k that reduces MSE
+
     :param x_train: x training dataframe
     :param y_train: y training series
     :param x_test: x testing dataframe
@@ -85,7 +90,7 @@ def train_k_nn_classifier(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.
 
 
 def train_k_nn_regressor(x_train: pd.DataFrame, y_train: pd.Series, x_test: pd.DataFrame, y_test: pd.Series) -> \
-        (int, float):
+        Tuple[int, float]:
     """
     Runs k nearest neighbours with cross validation and finds optimal k that reduces MSE
     :param x_train: x training dataframe
@@ -154,7 +159,7 @@ def predict_with_knn(optimal_k: int, x_train: pd.DataFrame, y_train, x_test: pd.
 
 
 def get_train_tests_sets_for_knn(df_: pd.DataFrame, y_col: str) -> \
-        (pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame):
+        Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
     Creates train and test tests for knn. Training set is the df with rows, where there are no null values in y_col.
     Testing set is the df with rows, where there are only null values in y_col. Missing values in X are filled with
