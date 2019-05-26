@@ -100,7 +100,7 @@ def get_train_test_dataframes(X: pd.DataFrame, y: pd.Series) -> Tuple[
 
 
 if __name__ == "__main__":
-    loans_df = pd.read_csv("../data/LoanDataProcessed.csv")
+    loans_df = pd.read_csv("../static/data/LoanDataProcessed.csv")
     df = prepare_dataframe(loans_df)
 
     X_df = df.drop('Defaulted', axis=1)
@@ -125,4 +125,4 @@ if __name__ == "__main__":
     loans_with_predictions_df = prepare_test_with_predictions(loans_df, test_X.index, predicted_probabilities)
 
     loans_with_predictions_df.to_csv(
-        '../data/loans_with_predictions_df.csv')
+        '../static/data/loans_with_predictions_df.csv')
