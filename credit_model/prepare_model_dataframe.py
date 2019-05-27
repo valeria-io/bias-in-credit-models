@@ -14,7 +14,7 @@ def filter_training_columns(df_):
                         'CreditScoreEeMini', 'NoOfPreviousLoansBeforeLoan',
                         'AmountOfPreviousLoansBeforeLoan', 'PreviousRepaymentsBeforeLoan',
                         'PreviousEarlyRepaymentsBefoleLoan',
-                        'PreviousEarlyRepaymentsCountBeforeLoan', 'Defaulted',
+                        'PreviousEarlyRepaymentsCountBeforeLoan', 'PaidLoan',
                         'Council_house', 'Homeless', 'Joint_ownership', 'Joint_tenant',
                         'Living_with_parents', 'Mortgage', 'Other', 'Owner',
                         'Owner_with_encumbrance', 'Tenant', 'Entrepreneur',

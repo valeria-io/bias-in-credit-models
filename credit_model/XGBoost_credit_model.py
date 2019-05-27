@@ -23,21 +23,21 @@ def find_best_xgboost_model(train_x: pd.DataFrame, train_y: pd.Series) -> Tuple[
     scale_pos_weight = (len(train_y) - train_y.sum()) / train_y.sum()
 
     param_test = {
-        'max_depth': [8, 9, 10, 11],
-        'learning_rate': [0.015, 0.05, 0.1, 0.15],
-        'n_estimators': [100, 150, 200, 300, 400, 500]
-    }
+            'max_depth': [6, 7, 8, 9],
+            'learning_rate': [0.05, 0.06, 0.07],
+            'n_estimators': [310, 315, 320]
+        }
 
     gsearch = GridSearchCV(estimator=XGBClassifier(
         objective='binary:logistic',
         nthread=4,
         scale_pos_weight=scale_pos_weight,
         seed=27),
-        param_grid=param_test, scoring='roc_auc', n_jobs=-1, iid=False, cv=5)
+        param_grid=param_test, scoring='roc_auc', n_jobs=-1, iid=False, cv=8)
 
     gsearch.fit(train_x, train_y)
 
-    return (gsearch.best_params_, gsearch.best_score_)
+    return gsearch.best_params_, gsearch.best_score_
 
 
 def xgboost_predict(best_params_: dict, train_x: pd.DataFrame, train_y: pd.Series, test_x: pd.DataFrame,
@@ -103,23 +103,21 @@ if __name__ == "__main__":
     loans_df = pd.read_csv("../static/data/LoanDataProcessed.csv")
     df = prepare_dataframe(loans_df)
 
-    X_df = df.drop('Defaulted', axis=1)
-    y_df = df['Defaulted']
+    X_df = df.drop('PaidLoan', axis=1)
+    y_df = df['PaidLoan']
 
     train_X, test_X, train_Y, test_Y = get_train_test_dataframes(X_df, y_df)
 
     best_params, best_score = find_best_xgboost_model(train_X, train_Y)
     print('Best Parameters: {} | Best AUC: {}'.format(best_params, best_score))
 
-    best_params = {'learning_rate': 0.05, 'max_depth': 9, 'n_estimators': 300}
-
     predicted_probabilities, auc = xgboost_predict(best_params, train_X, train_Y, test_X, test_Y)
     print("AUC: {}".format(auc))
 
     """
     This returned:
-    Best Parameters: {'learning_rate': 0.05, 'max_depth': 9, 'n_estimators': 300} | Best AUC: 0.7570655614472669
-    AUC: 0.7638599401900094
+    Best Parameters: {'learning_rate': 0.06, 'max_depth': 7, 'n_estimators': 315} | Best AUC: 0.7598685505779088
+    AUC: 0.7636995136412119
     """
 
     loans_with_predictions_df = prepare_test_with_predictions(loans_df, test_X.index, predicted_probabilities)
