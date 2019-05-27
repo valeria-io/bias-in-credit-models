@@ -25,7 +25,7 @@ def calculate_distribution_as_df(df: pd.DataFrame, col_name: str, is_categorical
         col_df = pd.DataFrame(col_counts)
 
     else:
-        col_counts = df[col_name].value_counts(dropna=False, normalize=True, bins=bins)
+        col_counts = df[col_name].value_counts(dropna=False, normalize=True, bins=bins, sort=False)
         col_df = pd.DataFrame(col_counts)
         null_val_count = 1 - col_df[col_name].sum()
         null_val_df = pd.DataFrame({col_name: [null_val_count]}, index=["Nan"])
