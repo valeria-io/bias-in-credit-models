@@ -36,8 +36,8 @@ def fill_na(df_: pd.DataFrame) -> pd.DataFrame:
     df_filled = df_.copy()
 
     exclude_columns = ['LoanNumber', 'ListedOnUTC', 'UserName', 'LoanDate', 'MaturityDate_Original',
-                       'MaturityDate_Last', 'DateOfBirth', 'DefaultDate', 'CreditScoreEeMini', 'isLate', 'Defaulted',
-                       'DefaultStatus', 'AgeGroup']
+                       'MaturityDate_Last', 'DateOfBirth', 'DefaultDate', 'CreditScoreEeMini', 'Defaulted',
+                       'PaidLoan', 'LoanStatus', 'AgeGroup']
 
     columns_to_be_filled = [col for col in df_.columns if
                             (col not in exclude_columns) & (df_[col].isnull().values.any())]

@@ -3,8 +3,11 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, mean_absolute_error
 
+from typing import Tuple
 
-def get_train_tests_sets_for_mode_mean(df_: pd.DataFrame, y_col: str) -> (pd.DataFrame, pd.DataFrame, pd.DataFrame):
+
+def get_train_tests_sets_for_mode_mean(df_: pd.DataFrame, y_col: str) -> \
+        Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
     Divides dataframe into one where null values are present in y_col and another one where there are no null values in
     y_col. For the dataframe without null values in y_col, it creates a dataframe for training and another one for
@@ -26,7 +29,7 @@ def get_train_tests_sets_for_mode_mean(df_: pd.DataFrame, y_col: str) -> (pd.Dat
     return train_df, test_df, df_with_nan_in_y
 
 
-def train_with_mode_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df: pd.DataFrame) -> (str, float):
+def train_with_mode_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df: pd.DataFrame) -> Tuple[str, float]:
     """
     This function goes through different columns in dataframe and each time it groups the dataframe and calculates the
     most frequent value (mode) for the column we're interested in filling. For each iteration, it keeps track of the
@@ -62,7 +65,7 @@ def train_with_mode_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df
     return optimal_grouping_col, best_missclassification_on_test
 
 
-def train_with_median_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df: pd.DataFrame) -> (str, float):
+def train_with_median_group(col_to_be_filled: str, train_df: pd.DataFrame, test_df: pd.DataFrame) -> Tuple[str, float]:
     """
     This function goes through different columns in dataframe and each time it groups the dataframe and calculates the
     median for the column we're interested in filling. For each iteration, it keeps track of the mean absolute error

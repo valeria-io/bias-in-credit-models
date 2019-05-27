@@ -20,7 +20,7 @@ def raw_df_pre_process_knn_df(df_raw: pd.DataFrame) -> pd.DataFrame:
                         'IncomeFromSocialWelfare', 'IncomeFromLeavePay', 'IncomeFromChildSupport', 'IncomeOther',
                         'ExistingLiabilities', 'RefinanceLiabilities', 'AmountOfPreviousLoansBeforeLoan',
                         'DebtToIncome', 'FreeCash', 'NoOfPreviousLoansBeforeLoan',
-                        'PreviousRepaymentsBeforeLoan', 'isLate']
+                        'PreviousRepaymentsBeforeLoan']
 
     df_processed = df_raw[training_columns]
     df_processed = df_processed.replace(-1, np.nan)
@@ -47,10 +47,10 @@ def x_convert_to_num_col(df_: pd.DataFrame) -> pd.DataFrame:
         'UpTo5Years': 6, 'MoreThan5Years': 7, 'Retiree': 8
     })
 
-    df_processed[['NrOfDependants', 'Education', 'isLate',
+    df_processed[['NrOfDependants', 'Education',
                   'NewCreditCustomer', 'CreditScoreEeMini', 'Age', 'NoOfPreviousLoansBeforeLoan',
                   'EmploymentDurationCurrentEmployer']] = \
-        df_processed[['NrOfDependants', 'Education', 'isLate',
+        df_processed[['NrOfDependants', 'Education',
                       'NewCreditCustomer', 'CreditScoreEeMini', 'Age', 'NoOfPreviousLoansBeforeLoan',
                       'EmploymentDurationCurrentEmployer']].astype(float)
 

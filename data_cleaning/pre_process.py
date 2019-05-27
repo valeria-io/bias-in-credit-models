@@ -97,10 +97,9 @@ def add_new_columns(df_: pd.DataFrame) -> pd.DataFrame:
 
     :return: dataframe with loan details and new columns
     """
-    df_["isLate"] = df_['Status'].apply(lambda x: 1 if x == "Late" else 0)
     df_["Defaulted"] = df_['DefaultDate'].apply(lambda x: 0 if pd.isnull(x) else 1)
-    df_["DefaultStatus"] = df_["Defaulted"].apply(
-        lambda x: "Did not default" if x == 0 else "Defaulted")
+    df_["PaidLoan"] = df_["Defaulted"].replace({0: 1, 1: 0})
+    df_["LoanStatus"] = df_["PaidLoan"].apply(lambda x: 'Paid back' if x == 1 else 'Defaulted')
     df_["AgeGroup"] = df_["Age"].apply(lambda x: "Under 40" if x < 40 else "Over 40")
 
     return df_
@@ -126,8 +125,8 @@ def reformat_columns(df_: pd.DataFrame) -> pd.DataFrame:
     df_["NrOfDependants"] = pd.to_numeric(df_["NrOfDependants"])
 
     df_['CreditScoreEeMini'] = df_['CreditScoreEeMini'].astype(str)
-    df_['isLate'] = df_['isLate'].astype(bool)
     df_['Defaulted'] = df_['Defaulted'].astype(bool)
+    df_['PaidLoan'] = df_['PaidLoan'].astype(bool)
 
     return df_
 
