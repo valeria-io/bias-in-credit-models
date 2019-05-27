@@ -1,17 +1,14 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-from math import pi, isnan
+from math import pi
 
 from bokeh.plotting import figure, show
-from bokeh.models import HoverTool, ColumnDataSource, PrintfTickFormatter, BasicTickFormatter, NumeralTickFormatter, \
+from bokeh.models import HoverTool, ColumnDataSource, NumeralTickFormatter, \
     FactorRange, Legend
 from bokeh.layouts import gridplot
 from bokeh.transform import jitter
 
-import time
-from bokeh.themes import Theme
-import seaborn as sns
+from bokeh.io import export_svgs
 
 
 def calculate_distribution_as_df(df: pd.DataFrame, col_name: str, is_categorical: str, bins: int):
@@ -273,8 +270,8 @@ def create_corr_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: ca
             show(layout)
 
 
-def plot_roc_curve(fpr: list, tpr: list, title: str = 'ROC curve', x_axis_label: str = 'False Positive Rate (FPR)',
-                   y_axis_label: str = 'True Positive Rate (TPR)'):
+def plot_roc_curve(categories, title: str = 'ROC curve', x_axis_label: str = 'False Positive Rate (FPR)',
+                   y_axis_label: str = 'True Positive Rate (TPR)', line_width=2, plot_width=450, plot_height=450):
     """
     Plots ROC curve
     :param fpr: list of false positve rates
@@ -282,12 +279,15 @@ def plot_roc_curve(fpr: list, tpr: list, title: str = 'ROC curve', x_axis_label:
     :param title: title for the plot (default: ROC curve)
     :param x_axis_label: name for the x axis (default: False Positive Rate (FPR))
     :param y_axis_label: name for the y axis (default: True Positive Rate (TPR))
-    :return: plots ROC curve plot
+    :return: plots ROC curve plot figure
     """
 
-    p = figure(plot_width=370, plot_height=350, title=title)
+    p = figure(plot_width=plot_width, plot_height=plot_height, title=title)
 
-    p.line(fpr, tpr, line_width=2, line_color="#00BFA5")
+    for category, values in categories.items():
+
+        p.line(values['fpr'], values['tpr'], line_width=line_width, line_color=values['line_colour'],
+               line_dash=values['line_dash'], alpha=values['alpha'], legend=category)
 
     mid_line = np.arange(0, 1.1, 0.1)
     p.line(mid_line, mid_line, line_color="#616161", line_dash='dashed')
@@ -306,3 +306,14 @@ def plot_roc_curve(fpr: list, tpr: list, title: str = 'ROC curve', x_axis_label:
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_color = None
     return p
+
+
+def save_plot(p, file_name, path='../static/images/'):
+    """
+    Saves Bokeh plot figure as svg
+    :param p: Bokeh plot figure
+    :param file_name: name for the plot
+    :param path: path where file is saved
+    """
+    p.output_backend = "svg"
+    export_svgs(p, filename=path + file_name + '.svg')
