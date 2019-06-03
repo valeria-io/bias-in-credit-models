@@ -1,17 +1,19 @@
 import pandas as pd
 import numpy as np
 from math import pi
+from scipy import stats
 
 from bokeh.plotting import figure, show
-from bokeh.models import HoverTool, ColumnDataSource, NumeralTickFormatter, \
-    FactorRange, Legend
-from bokeh.layouts import gridplot
+from bokeh.models import HoverTool, ColumnDataSource, Legend, NumeralTickFormatter, FactorRange, LinearAxis, Range1d
 from bokeh.transform import jitter
-
 from bokeh.io import export_svgs
+from bokeh.layouts import gridplot
+import warnings
+
+warnings.filterwarnings('ignore')
 
 
-def calculate_distribution_as_df(df: pd.DataFrame, col_name: str, is_categorical: str, bins: int):
+def calculate_distribution_as_df(df: pd.DataFrame, col_name: str, is_categorical: bool, bins: int):
     """
     Returns dataframe with data for corresponding distribution
     :param df: dataframe with data
@@ -25,7 +27,7 @@ def calculate_distribution_as_df(df: pd.DataFrame, col_name: str, is_categorical
         col_df = pd.DataFrame(col_counts)
 
     else:
-        col_counts = df[col_name].value_counts(dropna=False, normalize=True, bins=bins, sort=False)
+        col_counts = df[col_name].round(2).value_counts(dropna=False, normalize=True, bins=bins, sort=False)
         col_df = pd.DataFrame(col_counts)
         null_val_count = 1 - col_df[col_name].sum()
         null_val_df = pd.DataFrame({col_name: [null_val_count]}, index=["Nan"])
@@ -76,19 +78,18 @@ def plot_bar_chart_distribution(df: pd.DataFrame, col_name: str, is_categorical:
     return p
 
 
-def plot_multiple_bar_chart_distribution(df: pd.DataFrame, col_name: str, group_category: str,
-                                         vars_to_drop: list = [], is_categorical: bool = True, plot_width: int = 330,
+def plot_multiple_categorical_bar_chart_distribution(df: pd.DataFrame, col_name: str, group_category: str,
+                                         vars_to_drop: list = [], plot_width: int = 330,
                                          plot_height: int = 330, colours: list = ["#8c9eff", "#536dfe"]):
     """
 
-    :param df:
-    :param col_name:
-    :param group_category:
-    :param vars_to_drop:
-    :param is_categorical:
-    :param plot_width:
-    :param plot_height:
-    :param colours:
+    :param df: dataframe with the bar charts that will be plotted
+    :param col_name: column name for the y values of the graph as bar charts
+    :param group_category: column name where the categorical data is
+    :param vars_to_drop: values to be dropped if needed
+    :param plot_width: width of the plot
+    :param plot_height: height of the plot
+    :param colours: colours used for the fill of each bar chart variable
     :return:
     """
 
@@ -175,7 +176,7 @@ def plot_multiple_correlations(df: pd.DataFrame, col1: str, col2: str, col_categ
             df_for_col = df[df[col_category] == cat].dropna()
             source = ColumnDataSource(df_for_col)
             c = p.circle(x=jitter(col1, width=jitter_scale, range=p.x_range, distribution='normal'), y=col2,
-                         color=circle_colours[ind], alpha=1 - (ind * 0.5 ** (ind)), source=source)
+                         color=circle_colours[ind], alpha=1 - (ind * 0.5 ** ind), source=source)
 
             legend_it.append(('{} (r = {})'.format(cat, round(correlations[ind], 2)), [c]))
 
@@ -241,7 +242,7 @@ def create_corr_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: ca
     :param df: dataframe with all columns to be plotted
     :param number_columns: the number of columns that the grid should have
     :param plot_func: the plot function to call for each plot in the grid
-    :param min_corr:
+    :param min_corr: min value for the correlation graph to be plotted
     :param ignore_cols: columns that should not be used for plotting
     :param kwargs: any extra variable that the plot function may require
     :return: plots a grid with graphs
@@ -252,7 +253,7 @@ def create_corr_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: ca
     for ind, col1 in enumerate(cols_to_plot):
         second_cols = cols_to_plot[ind + 1:]
         if len(second_cols) == 0:
-            break;
+            break
         layout_grid = []
         count = 0
         row = []
@@ -270,22 +271,26 @@ def create_corr_plot_layout(df: pd.DataFrame, number_columns: int, plot_func: ca
             show(layout)
 
 
-def plot_roc_curve(categories, title: str = 'ROC curve', x_axis_label: str = 'False Positive Rate (FPR)',
+def plot_roc_curve(categories_info: dict, title: str = 'ROC curve', x_axis_label: str = 'False Positive Rate (FPR)',
                    y_axis_label: str = 'True Positive Rate (TPR)', line_width=2, plot_width=450, plot_height=450):
     """
     Plots ROC curve
-    :param fpr: list of false positve rates
-    :param tpr: list of true positive rates
+    :param categories_info: dictionary with:
+        - fpr: list with false positive rates values
+        - tpr: list with false positive rates values
+        - line_colour: hex code for the colour of each ROC line
     :param title: title for the plot (default: ROC curve)
     :param x_axis_label: name for the x axis (default: False Positive Rate (FPR))
     :param y_axis_label: name for the y axis (default: True Positive Rate (TPR))
+    :param line_width: line width of ROC lines (default: 2)
+    :param plot_width: width of the plot figure (default: 450)
+    :param plot_height: height of the plot figure (default: 450)
     :return: plots ROC curve plot figure
     """
 
     p = figure(plot_width=plot_width, plot_height=plot_height, title=title)
 
-    for category, values in categories.items():
-
+    for category, values in categories_info.items():
         p.line(values['fpr'], values['tpr'], line_width=line_width, line_color=values['line_colour'],
                line_dash=values['line_dash'], alpha=values['alpha'], legend=category)
 
@@ -317,3 +322,144 @@ def save_plot(p, file_name, path='../static/images/'):
     """
     p.output_backend = "svg"
     export_svgs(p, filename=path + file_name + '.svg')
+
+
+def plot_dual_axis_bar_line(df: pd.DataFrame, title: str, groups_name: str, bar_target_name_variable0: str,
+                            bar_target_name_variable1: str, bar_variables: list,
+                            line_target_name: str, left_axis_y_label: str, right_axis_y_label: str,
+                            bar_colours: list=["#8c9eff", "#536dfe"], plot_height=300, plot_width=700):
+
+    """
+
+    :param df: wide dataframe with data for each bar, the categorical valriables, the grouping and line
+    :param title: title of plot
+    :param groups_name: name for the column where the groups are
+    :param bar_target_name_variable0: name for the bar chart of the first variable
+    :param bar_target_name_variable1: name for the bar chart of the second variable
+    :param bar_variables: names of the variables used as a list
+    :param line_target_name: name of the column for the line chart
+    :param left_axis_y_label: label name for the left axis (related to the bar chart)
+    :param right_axis_y_label: label name for the right axis (related to the line chart)
+    :param bar_colours: colours used for each variable
+    :param plot_height: height of the plot
+    :param plot_width: width of the plot
+    :return:
+    """
+    df = df.copy()
+
+    groups = df[groups_name].unique()
+
+    tp_rates = [[df.loc[index, bar_target_name_variable0],
+                 df.loc[index, bar_target_name_variable1]]
+                for index, row in df.iterrows()]
+
+    tp_rates = [item for sublist in tp_rates for item in sublist]
+
+    index_tuple = [(group_, bar_variable) for group_ in groups for bar_variable in bar_variables]
+    colours = bar_colours * len(groups)
+
+    p = figure(x_range=FactorRange(*index_tuple), plot_height=plot_height, plot_width=plot_width,
+               title=title, tools="save")
+
+    """ Bar chart specific """
+    source = ColumnDataSource(data=dict(x=index_tuple, counts=tp_rates, profits=list(df[line_target_name]),
+                                        colours=colours))
+    p.vbar(x='x', top='counts', width=0.9, source=source, color='colours')
+
+    """ Line chart specific """
+    p.line(x=list(groups), y=list(df[line_target_name]), y_range_name=right_axis_y_label, line_color="#ffca28",
+           line_width=2)
+    p.circle(x=list(groups), y=list(df[line_target_name]), y_range_name=right_axis_y_label, color="#ffca28", size=7)
+
+    """ Axis specific """
+    p.y_range = Range1d(0, 1)
+    p.yaxis.axis_label = left_axis_y_label
+    p.extra_y_ranges = {right_axis_y_label: Range1d(start=0, end=max(df[line_target_name])*1.2)}
+    p.add_layout(LinearAxis(y_range_name=right_axis_y_label, axis_label=right_axis_y_label), 'right')
+    p.yaxis[0].formatter = NumeralTickFormatter(format='0 %')
+
+    p.x_range.range_padding = 0.1
+    p.xaxis.major_label_orientation = 1
+    p.xgrid.grid_line_color = None
+
+    return p
+
+
+def plot_density(df: pd.DataFrame, title: str, column_line_name: list, column_category_name: str, plot_width: int = 330,
+                 plot_height: int = 330, colours: list = ['#00BFA5', "#8c9eff", "#536dfe"]):
+    """
+    Creates figure with distribution as bar chart
+    :param df: dataframe with data
+    :param title: title for the graph
+    :param column_line_name: indicates the column needed to to create distribution line
+    :param is_categorical: indicates if plot uses categorical or numerical variables
+    :param plot_width: figure's width (default = 330)
+    :param plot_height: figure's height (default = 330)
+    :param colour: fill colour for bar chart
+    :return: figure with  bar chart distribution
+    """
+
+    hover = HoverTool()
+
+    p = figure(title=title, plot_width=plot_width, plot_height=plot_height, tools=["save", hover])
+
+    for ind, category_ in enumerate(df[column_category_name].unique()):
+        temp_df = df[df[column_category_name] == category_]
+        density = stats.kde.gaussian_kde(temp_df[column_line_name])
+        xs = np.linspace(0, 1, 100)
+        source = ColumnDataSource(pd.DataFrame({'density': density(xs), 'xs': xs}))
+        p.line(x='xs', y='density', source=source, line_color=colours[ind], legend=category_, line_width=2)
+
+    p.title.text_font = p.xaxis.axis_label_text_font = p.yaxis.axis_label_text_font = "Helvetica Neue"
+    p.xgrid.visible = p.ygrid.visible = False
+
+    tooltips = [("density", "@ density {0%}")]
+
+    hover = p.select(dict(type=HoverTool))
+    hover.tooltips = tooltips
+
+    return p
+
+
+def plot_multiple_distributions(df: pd.DataFrame, title: str, column_bar_name: list,
+                                         column_category_name: str, plot_width: int = 330, plot_height: int = 330,
+                                         colours: list = ['#00BFA5', "#8c9eff", "#536dfe"], bins: int = 10):
+    """
+    Creates figure with distribution as bar chart
+    :param df: dataframe with data
+    :param title: title for the graph
+    :param column_bar_name: indicates the column needed to to create distribution figure
+    :param is_categorical: indicates if plot uses categorical or numerical variables
+    :param plot_width: figure's width (default = 330)
+    :param plot_height: figure's height (default = 330)
+    :param colour: fill colour for bar chart
+    :param bins: number of bins
+    :return: figure with  bar chart distribution
+    """
+
+    hover = HoverTool()
+
+    p = figure(title=title, plot_width=plot_width, plot_height=plot_height, tools=["save", hover])
+
+    for ind, category_ in enumerate(sorted(df[column_category_name].unique())):
+        temp_df = df[df[column_category_name] == category_]
+        arr_hist, edges = np.histogram(temp_df[column_bar_name],
+                               bins = bins,
+                               range = [0, 1])
+
+        hist_df = pd.DataFrame({'dis': arr_hist,
+                               'left': edges[:-1],
+                               'right': edges[1:]})
+        source = ColumnDataSource(hist_df)
+        p.quad(bottom=0, top='dis', left='left', right='right', fill_color=colours[ind], source=source,
+               fill_alpha=0.6**ind, line_width=0, legend=column_category_name + ": "+ str(category_))
+
+    p.title.text_font = p.xaxis.axis_label_text_font = p.yaxis.axis_label_text_font = "Helvetica Neue"
+    p.xgrid.visible = p.ygrid.visible = False
+
+    tooltips = [("dis", "@" + "dis" + '{0%}')]
+
+    hover = p.select(dict(type=HoverTool))
+    hover.tooltips = tooltips
+
+    return p
