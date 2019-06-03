@@ -109,7 +109,7 @@ def reformat_columns(df_: pd.DataFrame) -> pd.DataFrame:
     """
     R-formats the column types
 
-    :param raw_data_df: dataframe with loan details
+    :param df_: dataframe with loan details
 
     :return: dataframe with loan details with reformate dcolumns
     """
