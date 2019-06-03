@@ -38,14 +38,14 @@ def calculate_classification_metrics(actuals: pd.Series, predicted_proba: pd.Ser
     return tp, fp, pr, nr, tpr, fpr
 
 
-def run_algorithmic_interventions_df(df_dict, col_names_dict, weights_dict, error_margin=0.01):
+def run_algorithmic_interventions_df(df_dict, col_names_dict, weights_dict):
     results_columns = ['IntervationName', 'Profit', 'threshold_0', 'threshold_1', 'TruePositive0', 'FalsePositive0',
                        'PositiveRate0', 'NegativeRate0', 'TruePositiveRate0', 'FalsePositiveRate0', 'TruePositive1',
                        'FalsePositive1', 'PositiveRate1', 'NegativeRate1', 'TruePositiveRate1', 'FalsePositiveRate1']
 
     results_df = pd.DataFrame(columns=results_columns)
 
-    thresholds = np.arange(0.2, 0.81, 0.01)
+    thresholds = np.arange(0, 1.01, 0.01)
 
     df_0 = df_dict['group_0']
     df_1 = df_dict['group_1']
@@ -64,29 +64,28 @@ def run_algorithmic_interventions_df(df_dict, col_names_dict, weights_dict, erro
 
             profit_function = weights_dict['weight_tp'] * (tp0 + tp1) - weights_dict['weight_fp'] * (fp0 + fp1)
 
-            """ 
-            Intervention 1: Maximise profit - uses different or equal thresholds for each category without any 
-            constrains 
+            """
+            Intervention 1: Maximise profit - uses different or equal thresholds for each category without any
+            constrains
             """
             results_df = results_df.append(
                 pd.DataFrame(
                     columns=results_columns,
                     data=[('MaxProfit', profit_function, t0, t1) + results_group_0 + results_group_1]))
 
-            """ 
-            Intervention 2: Group unawareness - uses equal threshold for both categories without any constrains 
+            """
+            Intervention 2: Group unawareness - uses equal threshold for both categories without any constrains
             """
             if t0 == t1:
                 results_df = results_df.append(pd.DataFrame(
                     columns=results_columns,
                     data=[('GroupUnawareness', profit_function, t0, t1) + results_group_0 + results_group_1]))
 
-            """ 
-            Intervention 3: Demographic parity - uses different or equal threshold for each category as soon as each 
-            group gets granted the same percentage of loans (equal negative rate)
             """
-            # if abs(pr0 - pr1) <= error_margin:
-            if round(pr0, 2) == round(pr0, 2):
+            Intervention 3: Demographic parity - uses different or equal threshold for each category as soon as each
+            group gets granted the same percentage of loans (equal positive rate)
+            """
+            if round(pr0, 2) == round(pr1, 2):
                 results_df = results_df.append(pd.DataFrame(
                     columns=results_columns,
                     data=[('DemographicParity', profit_function, t0, t1) + results_group_0 + results_group_1]))
@@ -95,34 +94,45 @@ def run_algorithmic_interventions_df(df_dict, col_names_dict, weights_dict, erro
             Intervention 4: Equal Opportunity - uses different or equal thresholds for each category as soon as each
             group has the same rate of correctly classified loans as paid (equal TPR)
             """
-            # if abs(tpr0 - tpr1) <= error_margin:
             if round(tpr0, 2) == round(tpr1, 2):
                 results_df = results_df.append(pd.DataFrame(
                     columns=results_columns,
                     data=[('EqualOpportunity', profit_function, t0, t1) + results_group_0 + results_group_1]))
+
                 """
                 Intervention 5: Equalised Odds - uses different or equal thresholds for each category as soon as each
-                group has the same rate of correctly classified loans as paid (equal TPR) AND each group has the same 
-                miss-classification rate of loans granted (equal FPR). 
+                group has the same rate of correctly classified loans as paid (equal TPR) AND each group has the same
+                miss-classification rate of loans granted (equal FPR).
                 """
-                # if abs(fpr0 - fpr1) <= error_margin:
                 if round(fpr0, 2) == round(fpr1, 2):
                     results_df = results_df.append(pd.DataFrame(
                         columns=results_columns,
                         data=[('EqualisedOdds', profit_function, t0, t1) + results_group_0 + results_group_1]))
+        print(t0, t1)
 
     return results_df
 
 
 if __name__ == "__main__":
     df = pd.read_csv("../static/data/loans_with_predictions_df.csv", index_col=[0], low_memory=False)
+    df = df.round(2)
     test_gender_male, test_gender_fem = split_test_set_by_binary_category(df, 'Gender', ['Male', 'Female'])
 
     gender_results_df = run_algorithmic_interventions_df(
         {'group_0': test_gender_fem, 'group_1': test_gender_male},
         {'actuals_col_name': 'PaidLoan', 'predicted_col_name': 'predicted_probabilities'},
-        {'weight_tp': 1, 'weight_fp': 1.5}
+        {'weight_tp': 1, 'weight_fp': 1.2}
     )
 
     gender_results_df.to_csv(
         '../static/data/fairness_measures_by_gender.csv')
+
+    test_age_over_40, test_age_under_40 = split_test_set_by_binary_category(df, 'AgeGroup', ['Over 40', 'Under 40'])
+    age_group_results_df = run_algorithmic_interventions_df(
+        {'group_0': test_age_over_40, 'group_1': test_age_under_40},
+        {'actuals_col_name': 'PaidLoan', 'predicted_col_name': 'predicted_probabilities'},
+        {'weight_tp': 1, 'weight_fp': 2}
+    )
+
+    age_group_results_df.to_csv(
+        '../static/data/fairness_measures_by_age_group.csv')
