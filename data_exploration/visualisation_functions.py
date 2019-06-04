@@ -343,7 +343,7 @@ def plot_dual_axis_bar_line(df: pd.DataFrame, title: str, groups_name: str, bar_
     :param bar_colours: colours used for each variable
     :param plot_height: height of the plot
     :param plot_width: width of the plot
-    :return:
+    :return: figure with bar chart in left axis and line chart in right axis
     """
     df = df.copy()
 
