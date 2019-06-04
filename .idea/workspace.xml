@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="042b8f9d-06a7-46e6-905b-fc2a547dfa07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+    <list default="true" id="042b8f9d-06a7-46e6-905b-fc2a547dfa07" name="Default Changelist" comment="re-run notebooks with new data">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_exploration/.ipynb_checkpoints/data_exploration_distributions-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data_exploration/.ipynb_checkpoints/data_exploration_distributions-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,25 +17,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_exploration/visualisation_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="104" column="89" selection-start-line="104" selection-start-column="89" selection-end-line="104" selection-end-column="89" />
+            <state relative-caret-position="-1483">
+              <caret line="345" column="76" selection-start-line="345" selection-start-column="76" selection-end-line="345" selection-end-column="76" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb">
-          <provider selected="true" editor-type-id="jupyter-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data_cleaning/pre_process.py">
+        <entry file="file://$PROJECT_DIR$/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/credit_model/XGBoost_credit_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="31" column="83" lean-forward="true" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+            <state relative-caret-position="1710">
+              <caret line="124" column="4" selection-start-line="124" selection-start-column="4" selection-end-line="125" selection-end-column="55" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -44,13 +44,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_cleaning/handle_missing_data.py">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/median_mode_forecast_for_na.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="930">
+              <caret line="67" column="118" selection-start-line="67" selection-start-column="118" selection-end-line="67" selection-end-column="118" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model_analysis/unfairness_measures.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="129" column="35" selection-start-line="129" selection-end-line="130" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/pandas/core/generic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="1477" selection-start-line="1477" selection-end-line="1477" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model_analysis/roc_curve.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/pandas/core/frame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42000">
+              <caret line="2893" selection-start-line="2893" selection-end-line="2893" />
             </state>
           </provider>
         </entry>
@@ -67,9 +118,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>accuracy_score</find>
-      <find>accuracy_scoref</find>
-      <find>bins</find>
+      <find>mode(</find>
+      <find>predict_with_mode</find>
+      <find>predict_classification</find>
+      <find>'_z'</find>
+      <find>add_nearest_z</find>
+      <find>predict_with_mode_group</find>
+      <find>df_with_nan_in_y</find>
+      <find>fill_na</find>
+      <find>freq</find>
+      <find>EmploymentS</find>
+      <find>Tuple</find>
+      <find>defaultstat</find>
+      <find>freque</find>
+      <find>as_matr</find>
+      <find>np.matri</find>
+      <find>frequ</find>
+      <find>data</find>
+      <find>/static</find>
+      <find>plot_bar_chart_distribution</find>
+      <find>/data</find>
+      <find>plot</find>
+      <find>isLate</find>
+      <find>drop</find>
+      <find>sort_index(axis=0)</find>
+      <find>min_child</find>
+      <find>bar_groups</find>
+      <find>column</find>
+      <find>plot_densi</find>
+      <find>print</find>
+      <find>multiple</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -81,9 +159,26 @@
         <option value="$PROJECT_DIR$/data_exploration/data_exploration.ipynb" />
         <option value="$PROJECT_DIR$/data_cleaning/pre_process_raw_data.py" />
         <option value="$PROJECT_DIR$/data_cleaning/missing_data.py" />
+        <option value="$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb" />
+        <option value="$PROJECT_DIR$/data_cleaning/knn_fill.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/fill_with_frequent_value.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/fill_with_knn.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/fill_with_median_mode.py" />
         <option value="$PROJECT_DIR$/data_cleaning/handle_missing_data.py" />
-        <option value="$PROJECT_DIR$/data_exploration/visualisation_functions.py" />
+        <option value="$PROJECT_DIR$/credit_model/prepare_dataframe.py" />
+        <option value="$PROJECT_DIR$/credit_model/model_performance.ipynb" />
+        <option value="$PROJECT_DIR$/model_analysis/model_performance.ipynb" />
+        <option value="$PROJECT_DIR$/model_analysis/roc_curve.py" />
+        <option value="$PROJECT_DIR$/model_analysis/bias_measures.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/fill_missing_values.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/knn_forecast_for_na.py" />
+        <option value="$PROJECT_DIR$/credit_model/prepare_model_dataframe.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/median_mode_forecast_for_na.py" />
+        <option value="$PROJECT_DIR$/credit_model/XGBoost_credit_model.py" />
+        <option value="$PROJECT_DIR$/model_analysis/fairness_measures.py" />
         <option value="$PROJECT_DIR$/data_cleaning/pre_process.py" />
+        <option value="$PROJECT_DIR$/model_analysis/unfairness_measures.py" />
+        <option value="$PROJECT_DIR$/data_exploration/visualisation_functions.py" />
       </list>
     </option>
   </component>
@@ -109,21 +204,6 @@
             </path>
             <path>
               <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
-              <item name="data_cleaning" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Discrimination in credit models" type="462c0819:PsiDirectoryNode" />
-              <item name="data_exploration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Discrimination in credit models" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -139,10 +219,11 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model_analysis" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -158,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.bias_measures">
     <configuration name="Discrimination in credit models" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Discrimination in credit models" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,6 +255,28 @@
       <option name="additionalOptions" value="" />
       <option name="ipnbHost" value="127.0.0.1" />
       <option name="ipnbPort" value="8888" />
+      <method v="2" />
+    </configuration>
+    <configuration name="XGBoost_credit_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/credit_model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/credit_model/XGBoost_credit_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -198,6 +301,107 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="bias_measures" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_analysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_analysis/unfairness_measures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fill_missing_values.py" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_cleaning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/fill_missing_values.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pre_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_cleaning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/pre_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="roc_curve" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Discrimination in credit models" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_analysis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_analysis/roc_curve.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.fill_missing_values.py" />
+      <item itemvalue="Python.pre_process" />
+      <item itemvalue="Python.XGBoost_credit_model" />
+      <item itemvalue="Python.roc_curve" />
+      <item itemvalue="Python.bias_measures" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.bias_measures" />
+        <item itemvalue="Python.XGBoost_credit_model" />
+        <item itemvalue="Python.fill_missing_values.py" />
+        <item itemvalue="Python.roc_curve" />
+        <item itemvalue="Python.pre_process" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -214,104 +418,9 @@
       <workItem from="1555866290728" duration="28030000" />
       <workItem from="1556469784335" duration="3474000" />
       <workItem from="1556561987208" duration="1356000" />
-    </task>
-    <task id="LOCAL-00001" summary="added initial data and vis functions">
-      <created>1555871187113</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1555871187113</updated>
-    </task>
-    <task id="LOCAL-00002" summary="added function to create plot layout and updated plot_dis to include numerical variables">
-      <created>1555877683021</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1555877683021</updated>
-    </task>
-    <task id="LOCAL-00003" summary="plotted numerical and categorical variables as grid">
-      <created>1555877716511</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1555877716511</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added documentation">
-      <created>1555877748287</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1555877748287</updated>
-    </task>
-    <task id="LOCAL-00005" summary="added k nearest neighbours to fill missing data">
-      <created>1555944006138</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1555944006138</updated>
-    </task>
-    <task id="LOCAL-00006" summary="added new columns and types for column formats">
-      <created>1555944035893</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1555944035893</updated>
-    </task>
-    <task id="LOCAL-00007" summary="added new distribution graphs">
-      <created>1556471424049</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1556471424049</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added new distribution graphs">
-      <created>1556471441427</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1556471441427</updated>
-    </task>
-    <task id="LOCAL-00009" summary="relabelling of default status">
-      <created>1556471469863</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1556471469863</updated>
-    </task>
-    <task id="LOCAL-00010" summary="kept only distribution graphs">
-      <created>1556472713898</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1556472713898</updated>
-    </task>
-    <task id="LOCAL-00011" summary="separated exploration graphs">
-      <created>1556473126345</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1556473126345</updated>
-    </task>
-    <task id="LOCAL-00012" summary="increased min_corr to 0.35">
-      <created>1556480724982</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1556480724982</updated>
-    </task>
-    <task id="LOCAL-00013" summary="refactored how min_corr is handled">
-      <created>1556480754121</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1556480754121</updated>
-    </task>
-    <task id="LOCAL-00014" summary="tracking large files with git lfs">
-      <created>1556604150001</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1556604150002</updated>
+      <workItem from="1558994111104" duration="263000" />
+      <workItem from="1558994509477" duration="10360000" />
+      <workItem from="1559345136467" duration="15085000" />
     </task>
     <task id="LOCAL-00015" summary="changed over/under 40">
       <created>1556604714383</created>
@@ -320,11 +429,347 @@
       <option name="project" value="LOCAL" />
       <updated>1556604714383</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="data exploration as html">
+      <created>1556637807993</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1556637807993</updated>
+    </task>
+    <task id="LOCAL-00017" summary="data exploration as html">
+      <created>1557775957462</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1557775957462</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added param types">
+      <created>1557787673907</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1557787673907</updated>
+    </task>
+    <task id="LOCAL-00019" summary="tries different methods to fill na's for each column and uses the best one">
+      <created>1558029787008</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1558029787008</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added more neighbours in comment">
+      <created>1558045407878</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1558045407878</updated>
+    </task>
+    <task id="LOCAL-00021" summary="separated functions into different files and added further documentation">
+      <created>1558116538037</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1558116538037</updated>
+    </task>
+    <task id="LOCAL-00022" summary="separated functions into different files and added further documentation">
+      <created>1558126988786</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1558126988786</updated>
+    </task>
+    <task id="LOCAL-00023" summary=" code reformated">
+      <created>1558127113494</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1558127113494</updated>
+    </task>
+    <task id="LOCAL-00024" summary="renamings">
+      <created>1558127393610</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1558127393610</updated>
+    </task>
+    <task id="LOCAL-00025" summary="updated neighbours">
+      <created>1558127486697</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1558127486697</updated>
+    </task>
+    <task id="LOCAL-00026" summary="df with filled values">
+      <created>1558128661541</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1558128661541</updated>
+    </task>
+    <task id="LOCAL-00027" summary="df with filled values">
+      <created>1558209512033</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1558209512033</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added the pre-processing of the original loan dataset">
+      <created>1558209541028</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1558209541028</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added new pre=process function">
+      <created>1558209563261</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1558209563261</updated>
+    </task>
+    <task id="LOCAL-00030" summary="built xgboost grid search">
+      <created>1558218428598</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1558218428598</updated>
+    </task>
+    <task id="LOCAL-00031" summary="documenting and few edits to main function">
+      <created>1558218458924</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1558218458924</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added dataframe with actuals and forecasts as well as processed data as csv">
+      <created>1558218504369</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1558218504369</updated>
+    </task>
+    <task id="LOCAL-00033" summary="runs xgboost with best params">
+      <created>1558382662719</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558382662719</updated>
+    </task>
+    <task id="LOCAL-00034" summary="actuals and forcast as csv">
+      <created>1558382837572</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1558382837572</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added documentation docstrings">
+      <created>1558512593219</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1558512593219</updated>
+    </task>
+    <task id="LOCAL-00036" summary="roc curve">
+      <created>1558512887572</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1558512887572</updated>
+    </task>
+    <task id="LOCAL-00037" summary="new dataset for loans with predictions">
+      <created>1558694532390</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1558694532390</updated>
+    </task>
+    <task id="LOCAL-00038" summary="adds model results to original df filtered by test indices">
+      <created>1558694727241</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1558694727241</updated>
+    </task>
+    <task id="LOCAL-00039" summary="tidied up docs">
+      <created>1558694910845</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1558694910845</updated>
+    </task>
+    <task id="LOCAL-00040" summary="adds static to path">
+      <created>1558904547486</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1558904547486</updated>
+    </task>
+    <task id="LOCAL-00041" summary="added roc curves for each group">
+      <created>1558958230586</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1558958230586</updated>
+    </task>
+    <task id="LOCAL-00042" summary="added roc curve functions">
+      <created>1558958248679</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1558958248679</updated>
+    </task>
+    <task id="LOCAL-00043" summary="moved data to static folder">
+      <created>1558958281451</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1558958281451</updated>
+    </task>
+    <task id="LOCAL-00044" summary="roc curve images as svg">
+      <created>1558958307952</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1558958307952</updated>
+    </task>
+    <task id="LOCAL-00045" summary="added function to save plots as svg">
+      <created>1558958381948</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1558958381948</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added fairness optimisation function">
+      <created>1558993802789</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1558993802789</updated>
+    </task>
+    <task id="LOCAL-00047" summary="new data">
+      <created>1558993881420</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1558993881420</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fixed sorting of index">
+      <created>1558993915556</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1558993915556</updated>
+    </task>
+    <task id="LOCAL-00049" summary="changed from 'defaulted' to 'paidloan'">
+      <created>1558993978026</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1558993978026</updated>
+    </task>
+    <task id="LOCAL-00050" summary="changed from 'defaulted' to 'paidloan'">
+      <created>1558993994291</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1558993994293</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added new distribution and desity functions">
+      <created>1559598737139</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598737140</updated>
+    </task>
+    <task id="LOCAL-00052" summary="dosctring update">
+      <created>1559598785250</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598785251</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added shorter values for optimisation">
+      <created>1559598824983</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598824984</updated>
+    </task>
+    <task id="LOCAL-00054" summary="finalised jupyter notebooks with results graphs">
+      <created>1559598846723</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598846723</updated>
+    </task>
+    <task id="LOCAL-00055" summary="updated the name of latest files">
+      <created>1559598880553</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598880554</updated>
+    </task>
+    <task id="LOCAL-00056" summary="added new images for notebooks">
+      <created>1559598918362</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598918362</updated>
+    </task>
+    <task id="LOCAL-00057" summary="added description">
+      <created>1559689760531</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1559689760534</updated>
+    </task>
+    <task id="LOCAL-00058" summary="added documentation">
+      <created>1559689854722</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1559689854723</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added a few more docstrings">
+      <created>1559689940183</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1559689940183</updated>
+    </task>
+    <task id="LOCAL-00060" summary="added loan statistics">
+      <created>1559690009058</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1559690009058</updated>
+    </task>
+    <task id="LOCAL-00061" summary="removed files">
+      <created>1559690268664</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1559690268666</updated>
+    </task>
+    <task id="LOCAL-00062" summary="added static images from jupyter notebook exports">
+      <created>1559690315697</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1559690315698</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added empty gitattributes">
+      <created>1559690561340</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1559690561340</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34587000" />
+    <option name="totallyTimeSpent" value="84194000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,34 +782,60 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="23" width="1669" height="961" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21020283" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2778119" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32978722" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49969268" weight="0.32978722" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49723417" weight="0.38770685" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6293792" weight="0.35460994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49846342" weight="0.32978722" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49969268" weight="0.3286052" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50092196" side_tool="true" visible="true" weight="0.2600473" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49846342" weight="0.44089836" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49907807" weight="0.32978722" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49661955" weight="0.32978722" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49108788" visible="true" weight="0.43026003" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5089121" side_tool="true" visible="true" weight="0.43026003" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.78672403" weight="0.38770685" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Jupyter" order="13" sideWeight="0.49907807" visible="true" weight="0.2600473" />
+      <window_info anchor="bottom" id="Jupyter" order="13" sideWeight="0.49846342" weight="0.2600473" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="R Packages" order="4" sideWeight="0.49896908" weight="0.32944068" />
       <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="SciView" order="6" sideWeight="0.4968051" visible="true" weight="0.018438844" />
-      <window_info anchor="right" x="0" y="0" width="367" height="761" id="Documentation" order="7" sideWeight="0.50319487" side_tool="true" visible="true" weight="0.018438844" />
+      <window_info anchor="right" id="SciView" order="6" sideWeight="0.62655604" visible="true" weight="0.15427166" />
+      <window_info anchor="right" x="0" y="0" width="367" height="761" id="Documentation" order="7" sideWeight="0.373444" side_tool="true" visible="true" weight="0.15427166" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21511985" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49723417" weight="0.38770685" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7701291" weight="0.34515366" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49846342" weight="0.32978722" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49907807" weight="0.3286052" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22987093" side_tool="true" weight="0.34515366" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" sideWeight="0.91763985" visible="true" weight="0.33451536" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Jupyter" order="13" sideWeight="0.49846342" weight="0.2600473" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" sideWeight="0.49896908" weight="0.32944068" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="SciView" order="6" sideWeight="0.85866666" visible="true" weight="0.1659496" />
+      <window_info anchor="right" x="0" y="0" width="367" height="761" id="Documentation" order="7" sideWeight="0.5010309" side_tool="true" weight="0.32944068" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -410,21 +881,149 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added initial data and vis functions" />
-    <MESSAGE value="added function to create plot layout and updated plot_dis to include numerical variables" />
-    <MESSAGE value="plotted numerical and categorical variables as grid" />
+    <MESSAGE value="adds static to path" />
+    <MESSAGE value="new file with static data" />
+    <MESSAGE value="added roc curves for each group" />
+    <MESSAGE value="added roc curve functions" />
+    <MESSAGE value="moved data to static folder" />
+    <MESSAGE value="roc curve images as svg" />
+    <MESSAGE value="added function to save plots as svg" />
+    <MESSAGE value="added fairness optimisation function" />
+    <MESSAGE value="new data" />
+    <MESSAGE value="fixed sorting of index" />
+    <MESSAGE value="re-run notebooks with new data" />
+    <MESSAGE value="changed from 'defaulted' to 'paidloan'" />
+    <MESSAGE value="added new distribution and desity functions" />
+    <MESSAGE value="dosctring update" />
+    <MESSAGE value="added shorter values for optimisation" />
+    <MESSAGE value="finalised jupyter notebooks with results graphs" />
+    <MESSAGE value="updated the name of latest files" />
+    <MESSAGE value="added new images for notebooks" />
+    <MESSAGE value="added description" />
     <MESSAGE value="added documentation" />
-    <MESSAGE value="added k nearest neighbours to fill missing data" />
-    <MESSAGE value="added new columns and types for column formats" />
-    <MESSAGE value="added new distribution graphs" />
-    <MESSAGE value="relabelling of default status" />
-    <MESSAGE value="kept only distribution graphs" />
-    <MESSAGE value="separated exploration graphs" />
-    <MESSAGE value="increased min_corr to 0.35" />
-    <MESSAGE value="refactored how min_corr is handled" />
-    <MESSAGE value="tracking large files with git lfs" />
-    <MESSAGE value="changed over/under 40" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed over/under 40" />
+    <MESSAGE value="added a few more docstrings" />
+    <MESSAGE value="added loan statistics" />
+    <MESSAGE value="removed files" />
+    <MESSAGE value="added static images from jupyter notebook exports" />
+    <MESSAGE value="added empty gitattributes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added empty gitattributes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Discrimination_in_credit_models$bias_measures.coverage" NAME="bias_measures Coverage Results" MODIFIED="1559347080646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model_analysis" />
+    <SUITE FILE_PATH="coverage/Discrimination_in_credit_models$handle_missing_data.coverage" NAME="handle_missing_data Coverage Results" MODIFIED="1556972421566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_cleaning" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>run_algorithmic_interventions_df_(
+        {'group_0': test_gender_fem, 'group_1': test_gender_male},
+        {'actuals_col_name': 'PaidLoan', 'predicted_col_name': 'predicted_probabilities'},
+        {'weight_tp': 1, 'weight_fp': 1.2},
+        test_equalized_odds,
+        'EqualizedOdds'
+    )</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results_df.sort_values('Profit', ascending=False)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>test = de</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results_df.sort_values('Profit')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results_df.groupby('IntervationName')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>results_df[results_df['IntervationName']=='EqualisedOdds']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(df[(df['Defaulted']==0) &amp; (df['pred']==1)])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(df[(df['Defaulted']==1) &amp; (df['pred']==0)])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(df[(df['Defaulted']==0) &amp; (df['pred']==0)])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>len(np.arange(0, 1, 0.01))**2</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(np.arange(0, 1, 0.01))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gender_results_df[gender_results_df['IntervationName']=='EqualOpportunity'].sort_values('Profit', ascending=False)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gender_results_df[gender_results_df['IntervationName']=='EqualOpportunity']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>gender_results_df[gender_results_df['IntervationName']=='EqualisedOdds']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>from statistics import mode</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>import statistics</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(y_pred_for_score).mode()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pd.mode(y_pred_for_score)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/bokeh/plotting/figure.py">
@@ -436,41 +1035,173 @@
     </entry>
     <entry file="file://$USER_HOME$/Library/Jupyter/runtime/nbserver-1729-open.html" />
     <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration.ipynb" />
-    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_exploration/visualisation_functions.py">
+    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb" />
+    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_distributions.ipynb" />
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/sklearn/utils/validation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="104" column="89" selection-start-line="104" selection-start-column="89" selection-end-line="104" selection-end-column="89" />
+        <state relative-caret-position="187">
+          <caret line="581" selection-start-line="581" selection-end-line="581" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="1251" selection-start-line="1251" selection-end-line="1251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/pandas/core/dtypes/cast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="701" selection-start-line="701" selection-end-line="701" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/sklearn/neighbors/regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/actuals_and_forecasts.csv" />
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/sklearn/metrics/ranking.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4840">
+          <caret line="355" selection-start-line="355" selection-end-line="355" />
+          <folding>
+            <element signature="e#657#688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/data/LoanDataProcessed.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credit_model/prepare_model_dataframe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/fill_missing_values.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_cleaning/handle_missing_data.py">
+    <entry file="file://$PROJECT_DIR$/data_cleaning/knn_forecast_for_na.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="-2045">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_exploration/data_exploration_correlations.ipynb">
-      <provider selected="true" editor-type-id="jupyter-editor" />
+    <entry file="file://$PROJECT_DIR$/static/data/LoanData.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/credit_model/XGBoost_credit_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="124" column="4" selection-start-line="124" selection-start-column="4" selection-end-line="125" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/median_mode_forecast_for_na.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="67" column="118" selection-start-line="67" selection-start-column="118" selection-end-line="67" selection-end-column="118" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_cleaning/pre_process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="31" column="83" lean-forward="true" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+        <state relative-caret-position="1695">
+          <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_analysis/roc_curve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42000">
+          <caret line="2893" selection-start-line="2893" selection-end-line="2893" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="1477" selection-start-line="1477" selection-end-line="1477" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/cm/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_analysis/model_performance.ipynb">
+      <provider selected="true" editor-type-id="jupyter-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_analysis/unfairness_measures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="129" column="35" selection-start-line="129" selection-end-line="130" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_exploration/visualisation_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1483">
+          <caret line="345" column="76" selection-start-line="345" selection-start-column="76" selection-end-line="345" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
