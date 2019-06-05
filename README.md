@@ -38,4 +38,4 @@ Does a grid search to find the best model using the technique Gradient Boosted D
 
 # More Information
 For more information on each algorithmic intervention and the intepretation of the case study results, go to:
-https://medium.com/@ValeriaCortezVD/preventing-discriminatory-outcomes-in-credit-models
+https://medium.com/@ValeriaCortezVD/preventing-discriminatory-outcomes-in-credit-models-39e1c6540353
