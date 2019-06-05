@@ -32,9 +32,9 @@ Both notebook take the processed and restructured data and plots the distributio
 Does a grid search to find the best model using the technique Gradient Boosted Decision Trees. After finding the best model, it saves the predictions and the original data as CSV.
 
 ### IV) Model Analysis and Unfairness Detection
-This has two jupyter notebooks with the relevant information for the analysis:
-- _model_performance_: Reviews the performance of the model using ROC curves and AUC for 'Gender' and 'Age Group.
-- _model_fairness_interventions_: Applies each algorithmic intervention to detect unfairness in the model.
+- _model_performance.ipynb_: Reviews the performance of the model using ROC curves and AUC for 'Gender' and 'Age Group.
+- _unfairness_measures.py_: Finds the best thresholds for each protected class by maximising profits whie meeting each algorithmic intervention requirements. This then saves all results as CSV.
+- _model_fairness_interventions.ipynb_: Reviews the results for from _unfairness_measures_
 
 # More information
 For more information on each algorithmic intervention and the intepretation of the case study results, go to:
