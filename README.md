@@ -39,3 +39,16 @@ Does a grid search to find the best model using the technique Gradient Boosted D
 # More Information
 For more information on each algorithmic intervention and the intepretation of the case study results, go to:
 https://medium.com/@ValeriaCortezVD/preventing-discriminatory-outcomes-in-credit-models-39e1c6540353
+
+# References
+## Data
+Bondora’s loan book. Available at: https://www.bondora.com/en/public-reports [Accessed August 18, 2018]
+
+## Main Literature
+Barocas, S., Hardt, M. & Narayanan, A., 2018. Fairness and machine learning. Available at: http://fairmlbook.org/ [Accessed August 29, 2018].
+
+Dwork, C. et al., 2012. Fairness Through Awareness. In Proceedings of the 3rd Innovations in Theoretical Computer Science Conference. ITCS ’12. New York, NY, USA: ACM, pp. 214–226.
+
+Hardt, M. et al., 2016. Equality of opportunity in supervised learning. In Advances in neural information processing systems. pp. 3315–3323.
+
+Pedreshi, D., Ruggieri, S. & Turini, F., 2008. Discrimination-aware Data Mining. In Proceedings of the 14th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. KDD ’08. New York, NY, USA: ACM, pp. 560–568.
