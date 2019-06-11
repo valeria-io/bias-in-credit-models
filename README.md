@@ -40,6 +40,11 @@ Does a grid search to find the best model using the technique Gradient Boosted D
 For more information on each algorithmic intervention and the intepretation of the case study results, go to:
 https://medium.com/@ValeriaCortezVD/preventing-discriminatory-outcomes-in-credit-models-39e1c6540353
 
+# Contact
+- Valeria Cortez, [me@valeria.io](https://twitter.com/ValeriaCortezVD)
+- [@ValeriaCortezVD](https://twitter.com/ValeriaCortezVD) on Twitter
+
+
 # References
 ## Data
 Bondora’s loan book. Available at: https://www.bondora.com/en/public-reports [Accessed August 18, 2018]
